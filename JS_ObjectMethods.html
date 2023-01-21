@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box{border:1px solid red;}
+        div{border:1px solid red;}
+        div>div{border:1px solid blue; 
+                background-color: pink;}
+        div#id{background-color: pink;}
+    </style>
+    
+</head>
+
+<body>
+
+<h1>JavaScript Strings</h1>
+
+<p>+++++++++++++++++++++++</p>
+
+            <div class="box">
+            <h2>The charAt() Method</h2>
+
+            <p>charAt() returns the character at a specified index (position) in a string.</p>
+            <p>Get the second character in a string:</p>
+            <p>eg: charAt(1) for HELLO WORLD</p>
+
+            <div><p id="demo"></p></div>
+
+            <script>
+            let text = "HELLO WORLD";
+            let letter = text.charAt(1);
+
+            document.getElementById("demo").innerHTML = letter;
+            </script>
+            </div>
+
+<p>+++++++++++++++++++++++</p>
+
+<div>
+<h2>The charCodeAt() Method</h2>
+
+<p>charCodeAt() returns the Unicode of the character at a specified position in a string.</p>
+
+<p>Get the Unicode of the first character:</p>
+<p>eg: charCodeAt(0) for HELLO WORLD</p>
+<div><p id="demo1"></p></div>
+
+<script>
+let text1 = "HELLO WORLD";
+let code = text1.charCodeAt(0);
+
+document.getElementById("demo1").innerHTML = code;
+</script>
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The concat() Method</h2>
+
+            <p>The concat() method joins two or more strings.</p>
+
+            <p>Join "Hello" and "world!" with a space in between:</p>
+
+            <div><p id="demo2"></p></div>
+
+            <script>
+            let text2 = "Hello";
+            let text3 = "world!";
+            let result = text2.concat(" ", text3);
+
+            document.getElementById("demo2").innerHTML = result;
+            </script>
+
+            <p>===============</p>
+
+            <p>Join "sea" and "food":</p>
+
+            <div><p id="demo3"></p></div>
+
+            <script>
+            let text4 = "sea";
+            let text5 = "food";
+            let result2 = text4.concat(text5);
+
+            document.getElementById("demo3").innerHTML = result2;
+            </script>
+            </div>
+
+<p>+++++++++++++++++++++++</p>
+
+
+<div>
+   <h2>The constructor Property</h2>
+
+<p>The constructor property returns the function that created the String prototype:</p>
+
+<p id="demo4"></p>
+
+<script>
+let message = "Hello World!";
+let text6=message.constructor;
+
+document.getElementById("demo4").innerHTML = text6;
+</script> 
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+
+            <div>
+            <h2>The endsWith() Method</h2>
+
+            <p>endsWith() returns true if a string ends with a specified string, otherwise false.</p>
+
+            <p>Check if "Hello World" ends with "world":</p>
+            <p>hint: case sensitive</p>
+
+            <div><p id="demo5"></p></div>
+
+            <p>endsWith() is not supported in IE 11 (or earlier versions).</p>
+
+            <script>
+            let text7 = "Hello World";
+            let result3 = text7.endsWith("world"); //case sensitive
+
+            document.getElementById("demo5").innerHTML = result3;
+            </script> 
+            </div>
+
+<p>+++++++++++++++++++++++</p>
+
+<div>
+   <h2>The String.fromCharCode() Method</h2>
+
+<p>String.fromCharCode() converts Unicode values to strings:</p>
+
+<p>Convert 72, 69, 76, 76, 79 to a string:</p>
+
+<div><p id="demo6"></p></div>
+
+<script>
+let text8 = String.fromCharCode(72, 69, 76, 76, 79);
+document.getElementById("demo6").innerHTML = text8;
+</script>
+
+<p>================</p>
+
+<p>String.fromCharCode() converts Unicode values to strings.</p>
+
+<p>Convert 65 to a string:</p>
+
+<div><p id="demo7"></p></div>
+
+<script>
+let text9 = String.fromCharCode(65);
+document.getElementById("demo7").innerHTML = text9; 
+</script>
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+
+            <div>
+            <h2>The includes() Method</h2>
+
+            <p>includes() returns true if a string contains a specified string.</p>
+            <p>hint: case sensitive</p>
+            <p>Find "world":</p>
+
+            <div><p id="demo8"></p></div>
+
+            <p>includes() is not supported in Internet Explorer 11 (or earlier).</p>
+
+            <script>
+            let text10 = "Hello world, welcome to the universe.";
+            let result4 = text10.includes("world"); //case sensitive
+
+            document.getElementById("demo8").innerHTML = result4;
+            </script>  
+            </div>
+
+<p>+++++++++++++++++++++++</p>
+
+
+<div>
+   <h2>The indexOf() Method</h2>
+
+<p>indexOf() returns the position of the first occurrence of a value in a string.</p>
+
+<p>The indexOf() method returns the position of the first occurrence of a value in a string.
+
+The indexOf() method returns -1 if the value is not found.
+
+The indexOf() method is case sensitive.</p>
+
+<p>Find "welcome" from "Hello world, welcome to the universe.":</p>
+
+<div><p id="demo9"></p></div>
+
+<script>
+let text11 = "Hello world, welcome to the universe.";
+let result5 = text11.indexOf("welcome");
+
+document.getElementById("demo9").innerHTML = result5;
+</script>
+
+<p>================</p>
+<p>Find "e" with indexOf("e"):</p>
+<div><p id="demo10"></p></div>
+<script>
+let text12 = "Hello world, welcome to the universe.";
+document.getElementById("demo10").innerHTML =text12.indexOf("e");
+</script>
+
+<p>================</p>
+<p>Find "e" starting at position 5 with ("e",5):</p>
+<div><p id="demo11"></p></div>
+<script>
+let text13 = "Hello world, welcome to the universe.";
+document.getElementById("demo11").innerHTML = text13.indexOf("e", 5); //ind the first occurrence of "e", starting at position 5:
+</script> 
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+
+            <div>
+               <h2>The lastIndexOf() Method</h2>
+
+                <p>lastIndexOf() returns the index of the last occurrence of a specified value in a string.</p>
+
+                <ul>The lastIndexOf() method returns the index (position) of the last occurrence of a specified value in a string.
+                <li>searches the string from the end to the beginning.</li>
+                <li>returns the index from the beginning (position 0).</li>
+                <li>returns -1 if the value is not found.</li>
+                <li>case sensitive.</li>
+                </ul>
+
+               <p>Find the last occurence of "planet" from ""Hello planet earth, you are a great planet."":</p>
+                <p id="demo12"></p>
+
+                <script>
+                let text14 = "Hello planet earth, you are a great planet.";
+                let result6 = text14.lastIndexOf("planet");
+
+                document.getElementById("demo12").innerHTML = result6;
+                </script>
+             </div>
+
+<p>+++++++++++++++++++++++</p>
+
+
+<div>
+ <h2>The length Property</h2>
+
+<p>The length property returns the length of a string.</p>
+
+<p>Find the length of "Hello World!":</p>
+
+<p id="demo13"></p>
+
+<script>
+let text15 = "Hello World!";
+let length = text15.length;
+
+document.getElementById("demo13").innerHTML = length;
+</script>   
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+
+            <div>
+               <h2>The localeCompare() Method</h2>
+
+                <p>localeCompare() returns one of 3 numbers indicating the sort order.</p> 
+
+                <ul>
+                <li>The localeCompare() method compares two strings in the current locale.</li>
+                <li>The localeCompare() method returns sort order -1, 1, or 0 (for before, after, or equal).</li>
+                <li>The current locale is based on the language settings of the browser.</li>
+                </ul>
+
+                <ul>
+                <li>-1 if sorted before</li>
+                <li>1 if sorted after</li>
+                <li>0 if equal</li> 
+                </ul>
+
+                <p>Compare "ab" with "cd":</p>
+
+                <p id="demo14"></p>
+
+                <script>
+                let text16 = "ab";
+                let text17 = "cd";
+                let result7 = text16.localeCompare(text17);
+
+                document.getElementById("demo14").innerHTML = result7;
+                </script>
+
+                <p>================</p>
+
+                <p>Compare "cd" with "ab":</p>
+
+                <p id="demo15"></p>
+
+                <script>
+                let text18 = "cd";
+                let text19 = "ab";
+                let result8 = text18.localeCompare(text19);
+
+                document.getElementById("demo15").innerHTML = result8;
+               </script>
+
+                <p>================</p>
+
+                <p>Compare "ab with "ab":</p>
+
+                <p id="demoa"></p>
+
+               <script>
+                let texta = "ab";
+                let textb = "ab";
+                let resulta = texta.localeCompare(textb);
+
+                document.getElementById("demoa").innerHTML = resulta;
+                </script>
+            </div>
+
+<p>+++++++++++++++++++++++</p>
+
+<div>
+  <h2>The match() Method</h2>
+
+<p>match() searches for a match in a string.</p>
+
+<p>Do a search for "ain":</p>
+
+<ul>Definition and Usage
+<li>The match() method matches a string against a regular expression **</li> <li>The match() method returns an array with the matches.</li>
+<li>The match() method returns null if no match is found.</li>
+</ul>
+
+<p>================</p>
+<p>match("ain") from "The rain in SPAIN stays mainly in the plain" </p>
+<p>answer here will be null. That's why nothing displayed for it</p>
+<p id="demo16"></p>
+
+<script>
+let text20 = "The rain in SPAIN stays mainly in the plain";
+let result9 = text.match("ain");
+ 
+document.getElementById("demo16").innerHTML = result9;
+</script>
+
+<p>================</p>
+<p>match(/ain/) using a regular expression:</p>
+<p id="demo17"></p>
+
+<script>
+let text21 = "The rain in SPAIN stays mainly in the plain";
+let result10 = text21.match(/ain/);
+ 
+document.getElementById("demo17").innerHTML = result10;
+</script>
+
+<p>eg: if match(/a/) will still produce a</p>
+<p>if match(/b/) or (/blue/) nothing will be displayed </p>
+
+<p>================</p>
+<p>Do a global search for "ain":</p>
+<p>match(/ain/g)</p>
+<p id="demo18"></p>
+
+<script>
+let text22 = "The rain in SPAIN stays mainly in the plain";
+let result11 = text22.match(/ain/g);
+ 
+document.getElementById("demo18").innerHTML = result11;
+</script>
+
+<p>3 ain produced came from 'rain','mainly','plain'</p>
+
+<p>================</p>
+<p>Do a global, case-insensitive, search for "ain":</p>
+<p>match(/ain/gi)</p>
+<p id="demo19"></p>
+
+<script>
+let text23 = "The rain in SPAIN stays mainly in the plain";
+let result12 = text23.match(/ain/gi);
+
+document.getElementById("demo19").innerHTML = result12;
+</script>
+
+<p>3 ain produced came from 'rain','SPAIN','mainly','plain'</p>  
+
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+
+            <div>
+            <h2>The prototype Property</h2>
+
+            <p>The prototype property allows you to add new properties and methods to existing objects.</p>
+
+            <p>Add a salary to all employees:</p>
+
+            <p>Definition and Usage
+            The prototype is a property available with all JavaScript objects that allows you to add new properties and methods to strings.</p>
+
+            <p>Warning
+            You are not advised to change the prototype of an object that you do not control.
+
+            You should not change the prototype of built in JavaScript datatypes like:
+
+            Numbers
+            Strings
+            Arrays
+            Dates
+            Booleans
+            Function
+            Objects
+            .Only change the prototype of your own objects.</p>
+
+            <p id="demo20"></p>
+
+            <script>
+            function employee(name, jobtitle, born) {
+            this.name = name;
+            this.jobtitle = jobtitle;
+            this.born = born;
+            }
+            employee.prototype.salary = 2000;
+
+            const fred = new employee("Fred Flintstone", "Caveman", 1970);
+            document.getElementById("demo20").innerHTML = fred.salary;
+            </script> 
+            </div>
+
+<p>+++++++++++++++++++++++</p>
+
+<div>
+ <h2>The repeat() Method</h2>
+
+<p>repeat() returns a new string with a number of copies of a string:</p>
+
+<p id="demo21"></p>
+
+<p>repeat() is not supported in Internet Explorer 11 (or earlier).</p>
+
+<script>
+let text24 = "Hello world!"+"\n";
+let result13 = text24.repeat(4);
+
+document.getElementById("demo21").innerHTML = result13;
+</script>   
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The replace() Method</h2>
+
+            <p>replace() searches a string for a value,
+            and returns a new string with the specified value(s) replaced:</p>
+
+            <ul>Definition and Usage
+            <li>The replace() method searches a string for a value or a regular expression.</li>
+            <li>The replace() method returns a new string with the value(s) replaced.</li>
+            <li>The replace() method does not change the original string.</li>
+            </ul>
+
+            <p>================</p>
+            <p>Initial:Visit Microsoft! </p>
+            <p>text25.replace("Microsoft", "W3Schools");</p>
+            <p id="demo22">Visit Microsoft!</p>
+
+            <script>
+            let text25 = document.getElementById("demo22").innerHTML; 
+            document.getElementById("demo22").innerHTML = text25.replace("Microsoft", "W3Schools");
+            </script>
+
+            <p>================</p>
+            <p>Initial: Mr Blue has a blue house and a blue car.</p>
+            <p>str = document.getElementById("demo23").innerHTML;</p>
+            <p>res = str.replace(/blue/g, "red");</p>
+            <p>Where: str and res are variable by let;</p>
+            <p id="demo23">Mr Blue has a blue house and a blue car.</p>
+
+            <script>
+            let str = document.getElementById("demo23").innerHTML; 
+            let res = str.replace(/blue/g, "red");
+            document.getElementById("demo23").innerHTML = res;
+            </script>   
+            </div>
+
+<p>+++++++++++++++++++++++</p>
+
+<div>
+ <h2>The search() Method</h2>
+
+<p>search() searches a string for a value and returns the position of the first match:</p>
+
+<ul>Definition and Usage
+<li>The search() method matches a string against a regular expression **</li>
+<li>The search() method returns the index (position) of the first match.</li>
+<li>The search() method returns -1 if no match is found.</li>
+<li>The search() method is case sensitive.</li>
+</ul>
+
+<p>From:"Mr. Blue has a blue house" </p>
+<p>text26.search("Blue");</p>
+<p id="demo24"></p>
+
+<script>
+let text26 = "Mr. Blue has a blue house"
+let position = text26.search("Blue");
+
+document.getElementById("demo24").innerHTML = position;
+</script>
+
+
+<p>================<p>
+<p>search(/blue/);</p>
+<p id="demo25"></p>
+
+<script>
+let text27 = "Mr. Blue has a blue house"
+let position1 = text27.search(/blue/);
+
+document.getElementById("demo25").innerHTML = position1;
+</script>
+
+<p>================<p>
+<p>search(/blue/i);</p>
+<p id="demo26"></p>
+
+<script>
+let text28 = "Mr. Blue has a blue house"
+let position2 = text28.search(/blue/i);
+
+document.getElementById("demo26").innerHTML = position2;
+</script>   
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The slice() Method</h2>
+
+            <p>slice() extracts a part of a string and returns the extracted part:</p>
+
+            <ul>Definition and Usage
+            The slice() method extracts a part of a string.
+            The slice() method returns the extracted part in a new string.
+            The slice() method does not change the original string.
+            The start and end parameters specifies the part of the string to extract.
+            The first position is 0, the second is 1, ...
+            A negative number selects from the end of the string
+            </ul>
+
+            <p>from: "Hello world!"</p>
+            <p>text29.slice(0, 5);</p>
+            <p id="demo27"></p>
+
+            <script>
+            let text29 = "Hello world!";
+            let result14 = text29.slice(0, 5);
+
+            document.getElementById("demo27").innerHTML = result14;
+            </script>
+
+            <p>================<p>
+            <p>slice(3);</p>
+            <p id="demo28"></p>
+
+            <script>
+            let text30 = "Hello world!"; 
+            let result15 = text30.slice(3);
+
+            document.getElementById("demo28").innerHTML = result15;
+            </script>
+
+            <p>================<p>
+            <p>slice(-3);</p>
+            <p id="a"></p>
+
+            <script>
+            let textc = "Hello world!"; 
+            let resultc = textc.slice(-3);
+
+            document.getElementById("a").innerHTML = resultc;
+            </script>
+            
+            </div>
+
+<p>+++++++++++++++++++++++</p>
+
+<div>
+ <h2>The split() Method</h2>
+
+<p>split() splits a string into an array of substrings, and returns the array:</p>
+<ul>Definition and Usage
+<li>The split() method splits a string into an array of substrings.</li>
+<li>The split() method returns the new array.</li>
+<li>The split() method does not change the original string.</li>
+<li>If (" ") is used as separator, the string is split between words.</li>
+</ul>
+
+<p>From: "How are you doing today?"</p>
+
+<p>myArray = textd.split(" ");</p>
+<p>Note that there is space between "" </p>
+<p id="demo29"></p>
+
+<script>
+let textd = "How are you doing today?";
+const myArray = textd.split(" ");
+
+document.getElementById("demo29").innerHTML = myArray; 
+</script>
+
+
+<p>================<p>
+<p>The second word is(with myArray1[1]):</p>
+<p id="demo30"></p>
+
+<script>
+let text31 = "How are you doing today?";
+const myArray1 = text31.split(" ");
+
+document.getElementById("demo30").innerHTML = myArray1[1]; 
+</script>
+
+<p>if with myArray1[0]): How</p>
+
+<p>================<p>
+<p>split("");</p>
+<p>Note that there is no space between "" </p>
+<p id="demo31"></p>
+
+<script>
+let text32 = "How are you doing today?";
+const myArray2 = text32.split("");
+
+document.getElementById("demo31").innerHTML = myArray2;
+</script>
+
+
+<p>================<p>
+<p>myArray3 = text33.split(" ", 2);</p>
+<p id="demo32"></p>
+
+<script>
+let text33 = "How are you doing today?";
+const myArray3 = text33.split(" ", 2);
+
+document.getElementById("demo32").innerHTML = myArray3;
+</script>   
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+<div>
+<h2>The startsWith() Method</h2>
+
+<p>startsWith() returns true if a string starts with a specified string:</p>
+<ul>Definition and Usage
+<li>The startsWith() method returns true if a string starts with a specified string.</li>
+<li>Otherwise it returns false.</li>
+<li>The startsWith() method is case sensitive.</li>
+</ul>
+
+<p>From: "Hello world, welcome to the universe." </p>
+<p>startsWith("Hello")</p>
+<p id="demo33"></p>
+
+<p>startsWith() is not supported in IE 11 (and earlier versions).</p>
+
+<script>
+let text34 = "Hello world, welcome to the universe.";
+let result16 = text34.startsWith("Hello");
+
+document.getElementById("demo33").innerHTML = result16;
+</script>
+
+<p>if startsWith("world") or ("hello")": false</p>
+
+<p>================<p>
+
+<p>text35.startsWith("world", 7);</p>
+<p id="demo34"></p>
+
+<script>
+let text35 = "Hello world, welcome to the universe.";
+let result17 = text35.startsWith("world", 7);
+
+document.getElementById("demo34").innerHTML = result17;
+</script>
+    
+<p>If ("world",6): true</p>
+<p>If ("welcome",7): false</p>
+
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+            <div>
+             <h2>The substr() Method</h2>
+
+                <p>substr() extracts a part of a string:</p>
+                <p>Definition and Usage.
+                The substr() method extracts a part of a string.
+
+                The substr() method begins at a specified position, and returns a specified number of characters.
+
+                The substr() method does not change the original string.
+
+                To extract characters from the end of the string, use a negative start position.</p>
+
+               <p>From: Hello world!</p>
+               <p>text36.substr(1, 4);</p>
+                <p id="demo35"></p>
+
+                <script>
+                let text36 = "Hello world!";
+                let result18 = text36.substr(1, 4);
+
+                document.getElementById("demo35").innerHTML = result18;
+                </script>
+
+
+                <p>================</p>
+                <p>substr(2);</p>
+                <p id="demo36"></p>
+
+                <script>
+                let str1 = "Hello world!";
+                let result19 = str1.substr(2);
+
+                document.getElementById("demo36").innerHTML = result19;
+                </script>   
+            </div>
+
+<p>+++++++++++++++++++++++</p>
+
+<div>
+ <h2>The substring() Method</h2>
+
+<p>substring() extracts a part of a string:</p>
+<ul>Definition and Usage
+<li>The substring() method extracts characters, between two indices (positions), from a string, and returns the substring.</li>
+<li>The substring() method extracts characters from start to end (exclusive).</li>
+<li>The substring() method does not change the original string.</li>
+<li>If start is greater than end, arguments are swapped: (4, 1) = (1, 4).</li>
+<li>Start or end values less than 0, are treated as 0.</li>
+</ul>
+
+<p>From: Hello world!</p>
+<p>text37.substring(1, 4);</p>
+<p id="demo37"></p>
+
+<script>
+let text37 = "Hello world!";
+let result20 = text37.substring(1, 4);
+
+document.getElementById("demo37").innerHTML = result20;
+</script>
+
+
+<p>================</p>
+<p>substring(2)</p>
+<p id="demo38"></p>
+
+<script>
+let text38 = "Hello world!";
+let result21 = text38.substring(2);
+
+document.getElementById("demo38").innerHTML = result21;
+</script>   
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+            <div>
+             <h2>The toLocaleLowerCase() Method</h2>
+
+            <p>toLocaleLowerCase() converts a string to lowercase letters, using current locale:</p>
+
+            <p id="demo39"></p>
+
+            <script>
+            let text39 = "Hello WOrld!";
+            let result22 = text39.toLocaleLowerCase();
+
+            document.getElementById("demo39").innerHTML = result22;
+            </script>   
+            </div>
+
+<p>+++++++++++++++++++++++</p>
+
+<div>
+<h2>The toLocaleUpperCase() Method</h2>
+
+<p>toLocaleUpperCase() converts a string to uppercase letters, using current locale:</p>
+
+<p id="demo40"></p>
+
+<script>
+let text40 = "Hello World!";
+let result23 = text40.toLocaleUpperCase();
+
+document.getElementById("demo40").innerHTML = result23;
+</script>    
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+            <div>
+             <h2>The toLowerCase() Method</h2>
+
+            <p>toLowerCase() converts a string to lowercase letters:</p>
+
+            <p id="demoe"></p>
+
+            <script>
+            let texte = "Hello WOrld!";
+            let resulte = texte.toLowerCase();
+
+            document.getElementById("demoe").innerHTML = resulte;
+            </script>   
+            </div>
+
+<p>+++++++++++++++++++++++</p>
+
+<div>
+ <h2>The toString() Method</h2>
+
+<p>toString() returns the content of a string:</p>
+
+<p id="demo42"></p>
+
+<script>
+let text42 = "Hello World!";
+let result24 = text42.toString();
+
+document.getElementById("demo42").innerHTML = result24; 
+</script>   
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The trim() Method</h2>
+
+            <p>trim() removes whitespace from both sides of a string:</p>
+            <p>Method does not change the original string.</p>
+
+            <p>Before: (before & after Hello world has big space)</p>
+            <pre><p id="demo43"></p></pre>
+            
+            <p>After trim()</p>
+            <pre><p id="demo44"></p></pre>
+
+            <script>
+            let text43 = "     Hello World!     ";
+            let result25 = text43.trim();
+
+            document.getElementById("demo43").innerHTML = text43;
+            document.getElementById("demo44").innerHTML = result25;
+            </script>
+            </div>
+
+<p>+++++++++++++++++++++++</p>
+
+<div>
+<h2>The trimEnd() Method</h2>
+<ul>
+<li>The trimEnd() method removes whitespace from the end of a string.</li>
+<li>The trimEnd() method does not change the original string.</li>
+<li>The trimEnd() method works like trim(), but removes whitespace only from the end of a string</li></ul>
+
+<p id="demo45"></p>
+<p id="demof"></p>
+
+<script>
+let text44 = "     Hello World!     ";
+let text45 = text44.trimEnd();
+let resultf = text44.trimEnd();
+
+document.getElementById("demo45").innerHTML =
+"Length text44 = " + text44.length + "<br>Length text45 = " + text45.length;
+
+document.getElementById("demof").innerHTML = resultf;
+</script>
+
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The trimStart() Method</h2>
+            <ul>Definition and Usage
+            <li>The trimStart() method removes whitespace from the beginning of a string.</li>
+            <li>The trimStart() method does not change the original string.</li>
+            <li>The trimStart() method works like trim(), but removes whitespace only from the start of a string</li></ul>
+
+            <p id="demo46"></p>
+            <p id="demog"></p>
+
+            <script>
+            let text46 = "     Hello World!     ";
+            let text47 = text46.trimStart();
+            let resultg = text46.trimStart();
+
+            document.getElementById("demo46").innerHTML =
+            "Length text46 = " + text46.length + "<br>Length text47 = " + text47.length;
+            
+            document.getElementById("demog").innerHTML = resultg;
+            </script>
+            </div>
+
+<p>+++++++++++++++++++++++</p>
+
+<div>
+<h2>The valueOf() Method</h2>
+
+<p>valueOf() returns the primitive value of a string:</p>
+<ul>Definition and Usage
+<li>The valueOf() method returns the primitive value of a string.</li>
+<li>The valueOf() method does not change the original string.</li>
+<li>The valueOf() method can be used to convert a string object into a string</li></ul>
+
+<p id="demo47"></p>
+
+<script>
+let text48 = "Hello World!";
+let result26 = text48.valueOf();
+
+document.getElementById("demo47").innerHTML = result26;
+</script>
+
+<p>================</p>
+<p>valueOf() returns the primitive value of a string.</p>
+
+<p>let result27 = text.valueOf() is the same as let result27 = text49:</p>
+
+<p id="demo48"></p>
+
+<script>
+let text49 = "Hello World!";
+let result27 = text49;
+
+document.getElementById("demo48").innerHTML = result27;
+</script>
+</div>
+
+<p>+++++++++++++++++++++++</p>
+
+</body>
+</html>
