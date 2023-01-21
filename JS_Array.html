@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div{border: 1px solid red;}
+        div>div{border:1px solid blue;}
+    </style>
+</head>
+<body>
+
+<h1>JavaScript Arrays</h1>
+
+<div>
+<h2>The concat() Method</h2>
+
+<p>The concat() method concatenates (joins) two or more arrays:</p>
+
+<ul>
+    <li>const arr3 or 1 = ["Cecilie", "Lone"];</li>
+    <li>arr4 or 2= ["Emil", "Tobias", "Linus"];</li>
+    <li>arr5 = ["Robin"];</li>
+</ul>
+
+<p>children = arr1.concat(arr2);</p>
+<p id="demo"></p>
+
+<script>
+const arr1 = ["Cecilie", "Lone"];
+const arr2 = ["Emil", "Tobias", "Linus"];
+
+const children = arr1.concat(arr2); 
+document.getElementById("demo").innerHTML = children;
+</script>
+
+<p>===============</p>
+
+<p>children1 = arr3.concat(arr4, arr5)</p>
+<p id="demo1"></p>
+
+<script>
+const arr3 = ["Cecilie", "Lone"];
+const arr4 = ["Emil", "Tobias", "Linus"];
+const arr5 = ["Robin"];
+
+const children1 = arr3.concat(arr4, arr5); 
+document.getElementById("demo1").innerHTML = children1;
+</script>
+</div>
+
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The constructor Property</h2>
+
+            <p>The constructor property returns the function that created the Array prototype:</p>
+
+            <p id="demo2"></p>
+
+            <script>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            let text1 = fruits.constructor;
+
+            document.getElementById("demo2").innerHTML = text1;
+            </script>
+
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The copyWithin() Method</h2>
+
+<p>copyWithin() copies array elements to another position in an array, overwriting existing values n does not add items to the array:</p>
+
+<p>array.copyWithin(target, start, end)</p>
+
+<p>===============</p>
+
+<p>const fruits = ["Banana", "Orange", "Apple", "Mango"];</p>
+
+<p>Copy the first two array elements to the last two array elements:</p>
+<p>fruits.copyWithin(2,0);</p>
+<p id="demo3"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+document.getElementById("demo3").innerHTML = fruits.copyWithin(2,0);
+</script>
+
+<p>The copyWithin() method is not supported in Internet Explorer.</p>
+
+<p>===============</p>
+
+<p>Copy the first two array elements to the third and fourth position:</p>
+<p>const fruits1 = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];</p>
+<p id="demo4"></p>
+
+<script>
+const fruits1 = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+
+document.getElementById("demo4").innerHTML = fruits1.copyWithin(2,0,2);
+</script>    
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The entries() method</h2>
+
+            <p>entries() returns an Array Iterator object with key/value pairs:</p>
+
+            <p>const fruits = ["Banana", "Orange", "Apple", "Mango"];</p>
+            <p id="demo5"></p>
+
+            <script>
+            const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+            const f = fruits2.entries();
+
+            for (let x of f) {
+            document.getElementById("demo5").innerHTML += x + "<br>";
+            }
+            </script>
+
+            <p>The entries() method is not supported in Internet Explorer 11 (or earlier).</p>    
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+ <h2>The every() Method</h2>
+
+<p>every() returns true if all elements in an array pass a test (provided as a function).</p>
+
+<p>Syntax= array.every(function(currentValue, index, arr), thisValue)</p>
+<p>const ages = [32, 33, 16, 40];</p>
+<p>function checkAge(age) {return age > 18;}</p>
+<p id="demo6"></p>
+
+<script>
+const ages = [32, 33, 16, 40];
+document.getElementById("demo6").innerHTML = ages.every(checkAge);
+
+function checkAge(age) {
+  return age > 18;
+}
+</script>   
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The fill() Method</h2>
+
+            <p>fill() fills specified elements in an array with a value. Method overwrites the original array.
+
+            Start and end position can be specified. If not, all elements will be filled.</p>
+            <p>Syntax= array.fill(value, start, end)</p>
+
+            <p>===============</p>
+            <p>Fill all array elements with "Kiwi":</p>
+            <p>const fruits = ["Banana", "Orange", "Apple", "Mango"];</p>
+
+            <p>fruits3.fill("Kiwi");</p>
+            <p id="demo7"></p>
+
+            <script>
+            const fruits3 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo7").innerHTML = fruits3.fill("Kiwi");
+            </script>
+
+            <p>The fill() method is not supported in Internet Explorer 11 (or earlier).</p>
+            <p>===============</p>
+
+            <p>Fill the last two array elements with "Kiwi":</p>
+
+            <p>const fruits4 = ["Banana", "Orange", "Apple", "Mango"];</p>
+            <p>.fill("Kiwi",2,4);</p>
+            <p id="demo8"></p>
+
+            <script>
+            const fruits4 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo8").innerHTML = fruits4.fill("Kiwi",2,4);
+            </script>                
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The filter() Method</h2>
+
+<p>The filter() method creates a new array filled with elements that pass a test provided by a function. Does not execute the function for empty elements n does not change the original array.</p>
+
+<p>Get every element in the array that has a value of 18 or more:</p>
+
+<p>const ages1 = [32, 33, 16, 40];</p>
+<p>function checkAdult1(age1) {return age1 >= 18;}</p>
+
+<p id="demo9"></p>
+
+<script>
+const ages1 = [32, 33, 16, 40];
+
+document.getElementById("demo9").innerHTML = ages1.filter(checkAdult1);
+
+function checkAdult1(age1) {
+  return age1 >= 18;
+}
+</script>    
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The find() Method</h2>
+
+            <p>find() returns the value of the first element in an array that passes a test (provided by a function):</p>
+
+            <p>Syntax= array.find(function(currentValue, index of current element, array of current element),thisValue)</p>
+
+            <p>const ages = [3, 10, 18, 20];</p>
+            <p>function checkAge(age) { return age > 18;}</p>
+
+            <p id="demo10"></p>
+
+            <script>
+            const ages2 = [3, 10, 18, 20];
+
+            document.getElementById("demo10").innerHTML = ages2.find(checkAge1);
+
+            function checkAge1(age2) {
+            return age2 > 18;
+            }
+            </script>
+
+            <p>The find() method is not supported in Internet Explorer 11 (or earlier).</p>
+               
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>findIndex()</h2>
+
+<p>findIndex() returns the index of the first element that passes a test (provided by a function).</p>
+
+<p>Syntax= array.findIndex(function(currentValue, index, arr), thisValue)</p>
+
+<p>const ages = [3, 10, 18, 20];</p>
+<p>function checkAge2(age3) {return age3 > 18;}</p>
+<p id="demo11"></p>
+
+<script>
+const ages3 = [3, 10, 18, 20];
+
+document.getElementById("demo11").innerHTML = ages3.findIndex(checkAge2);
+
+function checkAge2(age3) {
+  return age3 > 18;
+}
+</script>
+
+<p>findIndex() is not supported in Internet Explorer 11 (or earlier).</p>
+    
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The forEach() Method</h2>
+
+            <p>forEach() calls a function for each element in an array:</p>
+            <p>Syntax= array.forEach(function(currentValue, index, arr), thisValue)</p>
+
+            <p>const fruits= ["apple", "orange", "cherry"];</p>
+            <p>function myFunction(item, index) { text2 += index + ": " + item + " tag br";}</p>
+            
+            <p id="dem12"></p>
+
+            <script>
+            let t3 = "";
+            const f5=["apple","orange","cherry"];
+            f5.forEach(myFunc);
+
+            document.getElementById("dem12").innerHTML= t3;
+            
+            function myFunc(item1,index1) {
+            t3 += index1 + ": " + item1 + "<br>";  }
+            </script>   
+        
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+ <h2>The Array.from() Method</h2>
+
+<p>The Array.from() method returns an array from any iterable object.</p>
+<p>Create an array from a string:</p>
+
+<p>text4 = "ABCDEFG"</p>
+<p id="demo13"></p>
+
+<script>
+let text4 = "ABCDEFG"
+const myArr1 = Array.from(text4);
+
+document.getElementById("demo13").innerHTML = myArr1;
+</script>
+
+<p>The Array.from() method is not supported in Internet Explorer 11 (or earlier).</p>   
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+         
+             <div>
+             <h2>The includes() Method</h2>
+
+            <p>includes() returns true if an array contains a specified element:</p>
+
+            <p>const fruits = ["Banana", "Orange", "Apple", "Mango"];</p>
+            <p>fruits.includes("Mango");</p>
+            <p id="demo14"></p>
+
+            <script>
+            const fruits6 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo14").innerHTML = fruits6.includes("Mango");
+            </script>
+
+            <p>includes() is not supported in Internet Explorer or Edge 13 (or earlier).</p>
+
+            <p>===============</p>
+
+            <p>Check if fruit[] contains "Banana", starting the search from position 3:</p>
+
+            <p>.includes("Banana", 3);</p>
+            <p id="demo15"></p>
+
+            <script>
+            document.getElementById("demo15").innerHTML = fruits6.includes("Banana", 3);
+            </script>   
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The indexOf() Method</h2>
+
+<ul>Definition and Usage
+<li>The indexOf() method returns the first index (position) of a specified value</li>
+<li>returns -1 if the value is not found.</li>
+<li>starts at a specified index and searches from left to right.</li>
+<li>By default the search starts at the first element and ends at the last.
+Negative start values counts from the last element (but still searches from left to right).</li>
+</ul>
+
+<p>Syntax= array.indexOf(item, start)</p>
+<p>indexOf() returns the position of a specified value in an array:</p>
+
+<p>const fruits7 = ["Banana", "Orange", "Apple", "Mango"];</p>
+<p>fruits7.indexOf("Apple");</p>
+<p id="demo16"></p>
+
+<script>
+const fruits7 = ["Banana", "Orange", "Apple", "Mango"];
+let index2 = fruits7.indexOf("Apple");
+
+document.getElementById("demo16").innerHTML = index2;
+</script>
+
+<p>===============</p>
+
+<p>indexOf() returns the position of a specified value in an array.</p>
+
+<p>Search for "Apple", starting at position 3:</p>
+
+<p>const fruits8 = ["Banana", "Orange", "Apple", "Mango", "Apple"];</p>
+<p>.indexOf("Apple", 3);</p>
+<p id="demo17"></p>
+
+<script>
+const fruits8 = ["Banana", "Orange", "Apple", "Mango", "Apple"];
+let index3 = fruits8.indexOf("Apple", 3);
+
+document.getElementById("demo17").innerHTML = index3;
+</script>
+    
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+            <div>
+            <h2>The Array.isArray() Method</h2>
+
+            <p>Array.isArray() returns true if an object is an array, otherwise false:</p>
+
+            <p>const fruits9 = ["Banana", "Orange", "Apple", "Mango"];</p>
+            <p id="demo18"></p>
+
+            <script>
+            const fruits9 = ["Banana", "Orange", "Apple", "Mango"];
+            let result1 =  Array.isArray(fruits9);
+
+            document.getElementById("demo18").innerHTML = result1;
+            </script>
+
+            <p>===============</p>
+
+            <p>let text = "W3Schools";</p>
+            <p id="demo19"></p>
+
+            <script>
+            let text = "W3Schools";
+            let result2 =  Array.isArray(text);
+
+            document.getElementById("demo19").innerHTML = result2;
+            </script>               
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The join() Method</h2>
+
+<p>Syntax: array.join(separator)</p>
+<p>join() returns an array as a string:</p>
+
+<p>const fruits10 = ["Banana", "Orange", "Apple", "Mango"];</p>
+<p>let text5 = fruits10.join();</p>
+<p id="demo20"></p>
+
+<script>
+const fruits10 = ["Banana", "Orange", "Apple", "Mango"];
+let text5 = fruits10.join();
+
+document.getElementById("demo20").innerHTML = text5;
+</script>
+
+<p>===============</p>
+
+<p>text6 = fruits10.join(" and ");</p>
+<p id="demo21"></p>
+
+<script>
+let text6 = fruits10.join(" and ");
+
+document.getElementById("demo21").innerHTML = text6;
+</script>
+    
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The keys() Method</h2>
+
+            <p>keys() returns an Array Iterator object with the keys of an array:</p>
+
+            <p>const fruits = ["Banana", "Orange", "Apple", "Mango"];</p>
+            <p>let text7 or 8= ""; </p>
+            <p>for (let x of keys) { text += x + "br tag"; }</p>
+            <p>===============</p>
+            <p>const keys = fruits.keys();</p>
+            <p id="demo22"></p>
+
+            <script>
+            const fruits11 = ["Banana", "Orange", "Apple", "Mango"];
+            const keys = fruits11.keys();
+
+            let text7 = "";
+            for (let x of keys) {
+            text7 += x + "<br>";
+            }
+
+            document.getElementById("demo22").innerHTML = text7;
+            </script>
+
+            <p>keys() is not supported in Internet Explorer 11 (or earlier).</p>
+
+            <p>===============</p>
+
+            <h2>The Object.keys() Method</h2>
+
+            <p>Object.keys() returns an Array Iterator object with the keys of an object:</p>
+
+            <p>const keys = Object.keys(fruits);</p>
+            <p id="demo23"></p>
+
+            <script>
+            const fruits12 = ["Banana", "Orange", "Apple", "Mango"];
+            const keys2 = Object.keys(fruits12);
+
+            let text8 = "";
+            for (let x of keys2) {
+            text8 += x + "<br>";}
+
+            document.getElementById("demo23").innerHTML = text8;
+            </script>
+
+            <p>Object.keys() is not supported in Internet Explorer 11 (or earlier).</p>
+                            
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+ <h2>The lastIndexOf() Method</h2>
+
+<p>lastIndexOf() returns the last index (position) of a specified value:</p>
+
+<p>.lastIndexOf("Apple");</p>
+<p>const fruits12 = ["Apple", "Orange", "Apple", "Mango"];</p>
+<p id="demo24"></p>
+
+<script>
+const fruits12 = ["Apple", "Orange", "Apple", "Mango"];
+let index4 = fruits12.lastIndexOf("Apple");
+
+document.getElementById("demo24").innerHTML = index4;
+</script>
+<p>Supposed answer: 2</p>
+
+<p>===============</p>
+<p>const fruits13 = ["Orange","Apple","Mango","Apple","Banana","Apple"];</p>
+<p id="demo25"></p>
+
+<script>
+const fruits13 = ["Orange","Apple","Mango","Apple","Banana","Apple"];
+let index5 = fruits13.lastIndexOf("Apple");
+
+document.getElementById("demo25").innerHTML = index5;
+</script>
+   
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The length Property</h2>
+
+            <p>The length property sets or returns the number of elements in an array.</p>
+
+            <p>const fruits = ["Banana", "Orange", "Apple", "Mango"];</p>
+            <p>let length =  fruits.length;</p>
+            <p id="demo26"></p>
+
+            <script>
+            const fruits14 = ["Banana", "Orange", "Apple", "Mango"];
+            let length =  fruits14.length;
+
+            document.getElementById("demo26").innerHTML = length;
+            </script>
+
+            <p>===============</p>
+
+            <p>fruits15.length = 2;</p>
+            <p id="demo27"></p>
+
+            <script>
+            const fruits15 = ["Banana", "Orange", "Apple", "Mango"];
+            fruits15.length = 2;
+
+            document.getElementById("demo27").innerHTML = fruits15;
+            </script>               
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+ <h2>map()</h2>
+
+<p>Syntax: array.map(function(currentValue, index, arr), thisValue)</p>
+
+<ul>
+<li>The Array.map() method creates a new array from the results of calling a function for every element.</li>
+<li>calls a function once for each element in an array.</li>
+<li>does not execute the function for empty elements.</li>
+<li>does not change the original array.</li>
+</ul>
+
+<p>const numbers = [4, 9, 16, 25];</p>
+<p> numbers.map(Math.sqrt);</p>
+<p id="demo28"></p>
+
+<script>
+const numbers = [4, 9, 16, 25];
+document.getElementById("demo28").innerHTML = numbers.map(Math.sqrt);
+</script>
+
+<p>===============</p>
+
+<p>Multiply every element in the array with 10:</p>
+
+<p>const numbers2 = [65, 44, 12, 4];</p>
+<p>newArr2 = numbers2.map(myFunction3);</p>
+<p>function myFunction3(num) { return num * 10; }</p>
+<p id="demo29"></p>
+
+<script>
+const numbers2 = [65, 44, 12, 4];
+const newArr2 = numbers2.map(myFunction3);
+
+document.getElementById("demo29").innerHTML = newArr2;
+
+function myFunction3(num) {
+  return num * 10;
+}
+</script>   
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The pop() Method</h2>
+
+            <p>pop() removes the last element of an array.</p>
+
+            <p>const fruits = ["Banana", "Orange", "Apple", "Mango"];</p>
+            <p>fruits16.pop();</p>
+            <p id="demo30"></p>
+
+            <script>
+            const fruits16 = ["Banana", "Orange", "Apple", "Mango"];
+            fruits16.pop();
+            document.getElementById("demo30").innerHTML = fruits16;
+            </script>
+
+            <p>===============</p>
+
+            <p>pop() returns the element it removed:</p>
+
+            <p>let removed = fruits.pop();</p>
+            <p>document.getElementById("demo").innerHTML = removed;</p>
+            <p id="demo31"></p>
+
+            <script>
+            const fruits17 = ["Banana", "Orange", "Apple", "Mango"];
+            let removed = fruits17.pop();
+            document.getElementById("demo31").innerHTML = removed;
+            </script>               
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>.toUpperCase();</h2>
+<p>The prototype constructor allows you to add new properties or methods to the Array() object.</p>
+
+<p> (Syntax) Array.prototype.name = value</p>
+
+<p>const fruits18 = ["Banana", "Orange", "Apple", "Mango"];<p>
+<p id="demo32"></p>
+
+<script>
+// Add a new method
+Array.prototype.myUcase = function() {
+  for (let i = 0; i < this.length; i++) {
+    this[i] = this[i].toUpperCase();
+  }
+};
+
+// Use the method on any array
+const fruits18 = ["Banana", "Orange", "Apple", "Mango"];
+fruits18.myUcase();
+document.getElementById("demo32").innerHTML = fruits18;
+</script>    
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The push() Method</h2>
+
+            <p>push() adds new items to the end of an array:</p>
+            <p>Syntax: array.push(item1, item2, ..., itemX)</p>
+
+            <p>const fruits = ["Banana", "Orange", "Apple", "Mango"];</p>
+            <p>fruits.push("Kiwi");</p>
+            <p id="demo33"></p>
+
+            <script>
+            const fruits19 = ["Banana", "Orange", "Apple", "Mango"];
+            fruits19.push("Kiwi");
+
+            document.getElementById("demo33").innerHTML = fruits19;
+            </script>
+
+            <p>===============</p>
+
+            <p>fruits.push("Kiwi", "Lemon");</p>
+            <p id="demo34"></p>
+
+            <script>
+            const fruits20 = ["Banana", "Orange", "Apple", "Mango"];
+            fruits20.push("Kiwi", "Lemon");
+
+            document.getElementById("demo34").innerHTML = fruits20;
+            </script>
+               
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+
+<h2>.reduce()</h2>
+
+<div>
+<p> Syntax= array.reduce(function(total, currentValue, currentIndex, arr), initialValue)</p>
+</div>
+
+<ul>
+<li>The reduce() method executes a reducer function for array element.</li>
+<li>returns a single value: the function's accumulated result.</li>
+<li>does not execute the function for empty array elements.</li>
+<li>does not change the original array.</li>
+</ul>
+
+<p>===============</p>
+<p>Subtract the numbers in the array, starting from the left:</p>
+
+<p>const numbers = [175, 50, 25];</p>
+<p>numbers3.reduce(myFunc2);</p>
+<p>function myFunc2(total, num) { return total - num;}</p>
+<p id="demo35"></p>
+
+<script>
+const numbers3 = [175, 50, 25];
+document.getElementById("demo35").innerHTML = numbers3.reduce(myFunc2);
+
+function myFunc2(total, num) {
+  return total - num;
+}
+</script>
+
+<p>===============</p>
+
+<p>Compute the sum of the rounded numbers in an array.</p>
+
+<p>const numbers4 = [15.5, 2.3, 1.1, 4.7];</p>
+<p>numbers4.reduce(getSum, 0);</p>
+<p>function getSum(total, num) { return total + Math.round(num);}</p>
+<p id="demo36"></p>
+
+<script>
+const numbers4 = [15.5, 2.3, 1.1, 4.7];
+
+document.getElementById("demo36").innerHTML = numbers4.reduce(getSum, 0);
+
+function getSum(total, num) {
+  return total + Math.round(num);
+}
+</script>    
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>.reduceRight()</h2>
+
+            <p>Subtract the numbers in the array, starting from the right:</p>
+
+            <p>const numbers = [175, 50, 25];</p>
+            <p>numbers.reduceRight(myFunc);</p>
+            <p>function myFunc(total, num) { return total - num;}</p>
+            <p id="demo37"></p>
+
+            <script>
+            const numbers5 = [175, 50, 25];
+            document.getElementById("demo37").innerHTML = numbers5.reduceRight(myFunc3);
+
+            function myFunc3(total, num) {
+            return total - num;
+            }
+            </script>
+               
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>.reverse()</h2>
+
+<p>The Array.reverse() method reverses the order of the elements in an array.</p>
+
+<p>const fruits21 = ["Banana", "Orange", "Apple", "Mango"];</p>
+<p>fruits21.reverse();</p>
+<p id="demo38"></p>
+
+<script>
+const fruits21 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo38").innerHTML = fruits21.reverse();
+</script>    
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+             <div>
+            <h2>The shift() Method</h2>
+
+            <p>Syntax= array.shift()</p>
+
+            <ul>
+            <li>The shift() method removes the first item of an array.</li>
+            <li>changes the original array.</li>
+            <li>returns the shifted element.</li>
+            </ul>
+
+            <p>shift() removes the first item of an array:</p>
+
+            <p>const fruits22 = ["Banana", "Orange", "Apple", "Mango"];</p>
+            <p>fruits22.shift();</p>
+            <p id="demo39"></p>
+
+            <script>
+            const fruits22 = ["Banana", "Orange", "Apple", "Mango"];
+            fruits22.shift();
+
+            document.getElementById("demo39").innerHTML = fruits22;
+            </script>
+
+            <p>===============</p>
+
+            <p>shift() returns the removed array element:</p>
+
+            <p>document.getElementById("demo40").innerHTML = fruits23.shift();</p>
+            <p id="demo40"></p>
+
+            <script>
+            const fruits23 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo40").innerHTML = fruits23.shift();
+            </script>
+               
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>slice()</h2>
+
+<p>Syntax= array.slice(start, end)</p>
+
+<ul>
+<li>The slice() method returns selected elements in an array, as a new array.</li>
+<li>method selects from a given start, up to a (not inclusive) given end.</li>
+<li>method does not change the original array.</li>
+</ul>
+
+<p>Array.slice() returns selected array elements as a new array:</p>
+
+<p>const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];</p>
+<p>itrus = fruits.slice(1, 3);</p>
+<p id="demo41"></p>
+
+<script>
+const fruits24 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fruits24.slice(1, 3);
+
+document.getElementById("demo41").innerHTML = citrus;
+</script>
+
+<p>===============</p>
+
+<p>fruits.slice(-3, -1);</p>
+<p id="demo42"></p>
+
+<script>
+const fruits25 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const myBest = fruits25.slice(-3, -1);
+
+document.getElementById("demo42").innerHTML = myBest;
+</script>    
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+             <div>
+            <h2> .splice()</h2>
+            <p>Syntax= array.splice(index, howmany items to be removed, item1 to be added, ....., itemX)</p>
+
+            <p>===============</p>
+            <p>The Array.splice() method adds array elements:</p>
+
+            <p>const fruits26 = ["Banana", "Orange", "Apple", "Mango"];</p>
+            <p>fruits26.splice(2, 0, "Lemon", "Kiwi");</p>
+            <p id="demo43"></p>
+
+            <script>
+            const fruits26 = ["Banana", "Orange", "Apple", "Mango"];
+
+            // At position 2, add 2 elements: 
+            fruits26.splice(2, 0, "Lemon", "Kiwi");
+
+            document.getElementById("demo43").innerHTML = fruits26 ;
+            </script>
+
+            <p>===============</p>
+
+            <p>The Array.splice() method adds and removes array elements(overwrites the original array.):</p>
+
+            <p>const fruits27 = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];</p>
+            <p>fruits27.splice(2, 2);</p>
+            <p id="demo44"></p>
+
+            <script>
+            const fruits27 = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+
+            // At position 2, remove 2 items: 
+            fruits27.splice(2, 2);
+
+            document.getElementById("demo44").innerHTML = fruits27;
+            </script>                
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>.some()</h2>
+
+<p>Syntax= array.some(function(value, index, arr), this)</p>
+
+<ul>
+<li>The some() method checks if any array elements pass a test (provided as a callback function).</li>
+<li>executes the callback function once for each array element.</li>
+<li>returns true (and stops) if the function returns true for one of the array elements.</li>
+<li>returns false if the function returns false for all of the array elements.</li>
+<li>does not execute the function for empty array elements.</li>
+<li>does not change the original array.</li>
+</ul>
+
+<p>The Array.some() method checks if any of the elements in an array pass a test (provided as a function).</p>
+
+<p>===============</p>
+
+<p>const ages4 = [3, 10, 18, 20];</p>
+<p>ages4.some(checkAdult3);</p>
+<p>function checkAdult3(age4) { return age4 > 18; }</p>
+<p id="demo45"></p>
+
+<script>
+const ages4 = [3, 10, 18, 20];
+document.getElementById("demo45").innerHTML = ages4.some(checkAdult3);
+
+function checkAdult3(age4) {
+  return age4 > 18;
+}
+</script>    
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>.sort()</h2>
+
+            <p>array.sort(compareFunction)</p>
+
+            <div>
+                <ul><h3>compareFunction</h3>
+                <li>Optional.</li>
+                <li>A function that defines a sort order.</li>
+                <li>The function should return a negative, zero, or positive value, depending on the arguments:</li>
+                <li>function(a, b){return a-b}</li>
+                <li>When sort() compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value</li>
+                </ul>
+            </div>
+
+
+            <div>
+                <ul>
+                <li>The sort() sorts the elements of an array.</li>
+                <li>overwrites the original array.</li>
+                <li>sorts the elements as strings in alphabetical and ascending order.
+                </li>
+                </ul>
+            </div>
+
+
+            <p>===============</p>
+            <p>const fruits = ["Banana", "Orange", "Apple", "Mango"];</p>
+            <p>fruits.sort();</p>
+            <p id="demo46"></p>
+
+            <script>
+            const fruits29 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo46").innerHTML = fruits29.sort();
+            </script>
+
+
+            <p>===============</p>
+            <p>The Array.reverse() method reverses the order.</p>
+
+            <p>fruits.sort();</p>
+            <p>fruits.reverse();</p>
+            <p>document.getElementById("demo").innerHTML = fruits;</p>
+            <p id="demo47"></p>
+
+            <script>
+            const fruits30 = ["Banana", "Orange", "Apple", "Mango"];
+            fruits30.sort();
+            fruits30.reverse();
+            document.getElementById("demo47").innerHTML = fruits30;
+            </script>
+
+            <p>===============</p>
+
+            <p>const points = [40, 100, 1, 5, 25, 10];</p>
+            <p>points.sort(function(a, b){return a-b});</p>
+            <p id="demo"></p>
+
+            <script>
+            const points = [40, 100, 1, 5, 25, 10];
+            points.sort(function(a, b){return a-b});
+            document.getElementById("demo").innerHTML = points;
+            </script>
+
+            <p>if descending= points.sort(function(a, b){return b-a});</p>
+                        
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+ <h2>The unshift() Method</h2>
+
+<p>Syntax= array.unshift(item1, item2, ..., itemX)</p>
+
+<p>unshift() adds new items to the beginning of an array:</p>
+
+<p>===============</p>
+
+<p>const fruits = ["Banana", "Orange", "Apple", "Mango"];</p>
+<p>fruits.unshift("Lemon", "Pineapple");</p>
+<p id="demo48"></p>
+
+<script>
+const fruits31 = ["Banana", "Orange", "Apple", "Mango"];
+fruits31.unshift("Lemon", "Pineapple");
+
+document.getElementById("demo48").innerHTML = fruits31;
+</script>   
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+            <div>
+
+            <h2>.toString()</h2>    
+            <p>The Array.toString() method returns a string with all array values separated by commas:</p>
+
+            <p>const fruits32 = ["Banana", "Orange", "Apple", "Mango"];</p>
+            <p id="demo49"></p>
+
+            <script>
+            const fruits32 = ["Banana", "Orange", "Apple", "Mango"];
+            let text9 = fruits32.toString();
+            document.getElementById("demo49").innerHTML = text9;
+            </script>
+               
+            </div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The valueOf() Method</h2>
+
+<p>valueOf() returns the array itself:</p>
+
+<p>const fruits = ["Banana", "Orange", "Apple", "Mango"];</p>
+<p id="demo50"></p>
+
+<script>
+const fruits33 = ["Banana", "Orange", "Apple", "Mango"];
+const myArray5 = fruits33.valueOf();
+
+document.getElementById("demo50").innerHTML = myArray5;
+</script>   
+</div>
+
+<p>+++++++++++++++++++++++++++++++++</p>
+</body>
+</html>
