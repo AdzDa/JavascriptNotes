@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div{border: 1px solid red;}
+        div>div{border: 1px solid blue;
+                background-color: pink;}
+    </style>
+</head>
+
+<body>
+
+<h1>JavaScript Dates</h1>
+
+<p>Current- 21/01/2023(Saturday)</p>
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The constructor Property</h2>
+
+<p>The constructor property returns the function that created the Date prototype:</p>
+
+<p id="demo"></p>
+
+<script>
+const d = new Date();
+let text = d.constructor;
+
+document.getElementById("demo").innerHTML = text;
+</script>    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+
+            <div>
+            <h2>The getDate() Method</h2>
+
+            <p>Syntax= Date.getDate()</p>
+            <p>getDate() returns the day of the month (from 1 to 31) of a date:</p>
+
+            <p>const d1 = new Date();</p>
+            <p>let day1 = d1.getDate();</p>
+            <p>document.getElementById("demo1").innerHTML = day1;</p>
+            <p id="demo1"></p>
+
+            <script>
+            const d1 = new Date();
+            let day1 = d1.getDate();
+            document.getElementById("demo1").innerHTML = day1;
+            </script>
+
+            <p>===================</p>
+
+
+            <p id="demo2"></p>
+
+            <script>
+            const d2 = new Date("July 21, 1983 01:15:00");
+            let day2 = d2.getDate()
+            document.getElementById("demo2").innerHTML = day2;
+            </script>                
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The getDay() Method</h2>
+
+Date.getDay()
+
+A number	The day of the week (0 to 6).
+
+<p>The getDay() method returns the day of the week (from 0 to 6) of a date.</p>
+
+<p>const d3 = new Date();</p>
+<p>let day3 = d3.getDay()</p>
+<p id="demo3"></p>
+
+<script>
+const d3 = new Date();
+let day3 = d3.getDay()
+document.getElementById("demo3").innerHTML = day3;
+</script>
+
+<p>===================</p>
+
+<p>const d4 = new Date("July 21, 1983 01:15:00");</p>
+<p>let day4 = d4.getDay()</p>
+<p id="demo4"></p>
+
+<script>
+const d4 = new Date("July 21, 1983 01:15:00");
+let day4 = d4.getDay()
+
+document.getElementById("demo4").innerHTML = day4;
+</script>    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The getFullYear() Method</h2>
+
+            <p>getFullYear() returns the year with four digits:</p>
+
+            <p>const d5 = new Date();</p>
+            <p>let year = d5.getFullYear();</p>
+            <p id="demo5"></p>
+
+            <script>
+            const d5 = new Date();
+            let year = d5.getFullYear();
+            document.getElementById("demo5").innerHTML = year;
+            </script>
+
+            <p>===================</p>
+
+            <p>const d6 = new Date("July 21, 1983 01:15:00");</p>
+            <p id="demo6"></p>
+
+            <script>
+            const d6 = new Date("July 21, 1983 01:15:00");
+            let year1 = d6.getFullYear();
+            document.getElementById("demo6").innerHTML = year1;
+            </script>                
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The getHours() Method</h2>
+
+<p>getHours() returns the hour (from 0 to 23) of a date:</p>
+
+<p>const d7 = new Date("July 21, 1983 01:15:00");</p>
+<p>let hour = d7.getHours();</p>
+<p id="demo7"></p>
+
+<script>
+const d7 = new Date("July 21, 1983 01:15:00");
+let hour = d7.getHours();
+document.getElementById("demo7").innerHTML = hour;
+</script>
+
+<p>===================</p>
+
+<p>const d8 = new Date();</p>
+<p id="demo8"></p>
+
+<script>
+const d8 = new Date();
+let hour1 = d8.getHours();
+document.getElementById("demo8").innerHTML = hour1;
+</script>
+    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The getMilliseconds() Method</h2>
+
+            <p>getMilliseconds() returns the milliseconds of a date (0 to 999):</p>
+
+            <p>const d9 = new Date();</p>
+            <p>let ms = d9.getMilliseconds();</p>
+            <p id="demo9"></p>
+
+            <script>
+            const d9 = new Date();
+            let ms = d9.getMilliseconds();
+            document.getElementById("demo9").innerHTML = ms;
+            </script>
+
+            <p>===================</p>
+
+            <p>const d = new Date("July 21, 1983 01:15:00:526");</p>
+            <p id="demo10"></p>
+
+            <script>
+            const d10 = new Date("July 21, 1983 01:15:00:526");
+            let ms1 = d10.getMilliseconds();
+            document.getElementById("demo10").innerHTML = ms1;
+            </script>
+                
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The getMinutes() Method</h2>
+
+<p>getMinutes() returns the minutes of a date (0-59 min):</p>
+
+<p>const d11 = new Date();</p>
+<p>let minutes = d11.getMinutes();</p>
+<p id="demo11"></p>
+
+<script>
+const d11 = new Date();
+let minutes = d11.getMinutes();
+document.getElementById("demo11").innerHTML = minutes;
+</script>
+
+<p>eg: if 5.44 pm. we'll get 44</p>
+
+<p>===================</p>
+
+<p>const d12 = new Date("July 21, 1983 01:15:00");</p>
+<p id="demo12"></p>
+
+<script>
+const d12 = new Date("July 21, 1983 01:15:00");
+let minutes1 = d12.getMinutes();
+document.getElementById("demo12").innerHTML = minutes1;
+</script>
+    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The getMonth() Method</h2>
+
+            <p>getMonth() returns the month (from 0 to 11) of a date:</p>
+
+            <p>const d13 = new Date();</p>
+            <p>let month = d13.getMonth();</p>
+            <p id="demo13"></p>
+
+            <script>
+            const d13 = new Date();
+            let month = d13.getMonth();
+            document.getElementById("demo13").innerHTML = month;
+            </script>
+
+            <p><strong>Note:</strong> 0=January, 1=February etc.</p>
+
+            <p>===================</p>
+
+            <p>const month1 = ["January","February","March","April","May","June","July","August","September","October","November","December"];</p>
+            <p>const d14 = new Date();</p>
+            <p>let name1 = month1[d14.getMonth()];</p>
+            <p>document.getElementById("demo14").innerHTML = name1;</p>
+            <p id="demo14"></p>
+
+            <script>
+            const month1 = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+            const d14 = new Date();
+            let name1 = month1[d14.getMonth()];
+            document.getElementById("demo14").innerHTML = name1;
+            </script>               
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The getSeconds() Method</h2>
+
+<p>getSeconds() returns the seconds of a date(0 to 59) :</p>
+
+<p>const d15 = new Date();</p>
+<p>let seconds = d15.getSeconds();</p>
+<p id="demo15"></p>
+
+<script>
+const d15 = new Date();
+let seconds = d15.getSeconds();
+document.getElementById("demo15").innerHTML = seconds;
+</script>
+
+<p>===================</p>
+
+<p>function addZero(i) { if (i < 10) {i = "0" + i} return i; }</p>
+<p>const d16 = new Date();</p>
+<p>let h = addZero(d16.getHours());</p>
+<p>let m = addZero(d16.getMinutes());</p>
+<p>let s = addZero(d16.getSeconds());</p>
+<p>let time = h + ":" + m + ":" + s;</p>
+<p>document.getElementById("demo16").innerHTML = time;</p>
+<p id="demo16"></p>
+
+<script>
+function addZero(i) {
+  if (i < 10) {i = "0" + i}
+  return i;
+}
+
+const d16 = new Date();
+let h = addZero(d16.getHours());
+let m = addZero(d16.getMinutes());
+let s = addZero(d16.getSeconds());
+let time = h + ":" + m + ":" + s;
+document.getElementById("demo16").innerHTML = time;
+</script>    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+        <div>
+            <h2>The getTime() Method</h2>
+
+            <p>The internal clock in JavaScript starts at midnight January 1, 1970.</p>
+
+            <p>getTime() returns the number of milliseconds since January 1, 1970:</p>
+
+            <p>===================</p>
+
+            <p>const d17 = new Date();</p>
+            <p>let time1 = d17.getTime();</p>
+            <p id="demo17"></p>
+
+            <script>
+            const d17 = new Date();
+            let time1 = d17.getTime();
+            document.getElementById("demo17").innerHTML = time1;
+            </script>
+
+            <p>===================</p>
+
+            <p>Calculate the number of years since January 1, 1970:</p>
+
+            <p> const minute2 = 1000 * 60;</p>
+            <p> const hour = minute2 * 60;</p>
+            <p>const day3 = hour * 24;</p>
+            <p>const year2 = day3 * 365;</p>
+            <p>const d18 = new Date();</p>
+            <p>let years2 = Math.round(d18.getTime() / year2);</p>
+            <p id="demo18"></p>
+
+            <script>
+            
+            // Calculate milliseconds in a year
+            const minute3 = 1000 * 60;
+            const hour3 = minute3 * 60;
+            const day3 = hour3 * 24;
+            const year3 = day3 * 365;
+            
+            // Divide Time with a year
+            const d18 = new Date();
+            let years3 = Math.round(d18.getTime() / year3);
+
+            document.getElementById("demo18").innerHTML = years3;
+            </script>
+
+            <p>Supposed answer: 53</p>
+                    
+        </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The getTimezoneOffset() Method</h2>
+
+<p>getTimezoneOffset() returns the time difference between UTC time and local time, in minutes.</p>
+
+<p>For example, if your time zone is GMT+2, -120 will be returned.</p>
+
+<p id="demo19"></p>
+
+<script>
+const d19 = new Date();
+let diff = d19.getTimezoneOffset();
+document.getElementById("demo19").innerHTML = diff;
+</script>
+    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The getUTCDate() Method</h2>
+
+            <p>getUTCDate() returns the day of the month of a date, according to UTC:</p>
+
+            <p>const d20 = new Date();</p>
+            <p>let day4 = d20.getUTCDate();</p>
+            <p id="demo20"></p>
+
+            <script>
+            const d20 = new Date();
+            let day4 = d20.getUTCDate();
+            document.getElementById("demo20").innerHTML = day4;
+            </script>
+
+            <p>===================</p>
+
+            <p>const d21 = new Date("July 21, 1983 01:15:00");</p>
+            <p id="demo21"></p>
+
+            <script>
+            const d21 = new Date("July 21, 1983 01:15:00");
+            let day5 = d21.getUTCDate();
+            document.getElementById("demo21").innerHTML = day5;
+            </script>
+               
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The getUTCDay() Method</h2>
+
+<p>getUTCDay() returns the day of the week (from 0 to 6), according to UTC:</p>
+
+<p>const d = new Date();</p>
+<p>let day6 = d.getUTCDay();</p>
+<p id="demo22"></p>
+
+<script>
+const d22 = new Date();
+let day6 = d22.getUTCDay();
+document.getElementById("demo22").innerHTML = day6;
+</script>
+
+<p>===================</p>
+
+<p>const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];</p>
+<p>const d = new Date();</p>
+<p>let day7 = weekday[d.getUTCDay()];</p>
+<p id="demo23"></p>
+
+<script>
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+const d23 = new Date();
+let day7 = weekday[d23.getUTCDay()];
+document.getElementById("demo23").innerHTML = day7;
+</script>
+
+
+<p><strong>Note:</strong> 0=Sunday, 1=Monday, etc.</p>
+    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The getUTCFullYear() Method</h2>
+
+            <p>getUTCFullYear() returns the year of a date, according to UTC:</p>
+
+            <p>const d24 = new Date();</p>
+            <p>let year4 = d24.getUTCFullYear();</p>
+            <p id="demo24"></p>
+
+            <script>
+            const d24 = new Date();
+            let year4 = d24.getUTCFullYear();
+            document.getElementById("demo24").innerHTML = year4;
+            </script>
+
+            <p>===================</p>
+
+            <p>const d25 = new Date("July 21, 1983 01:15:00");</p>
+            <p>let year = d25.getUTCFullYear();</p>
+            <p id="demo25"></p>
+
+            <script>
+            const d25 = new Date("July 21, 1983 01:15:00");
+            let year5 = d25.getUTCFullYear();
+            document.getElementById("demo25").innerHTML = year5;
+            </script>                
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The getUTCHours() Method</h2>
+
+<p>getUTCHours() returns the hour(0 to 23) of a date, according to UTC:</p>
+
+<p>const d= new Date("July 21, 1983 01:15:00");</p>
+<p>let hour = d.getUTCHours();</p>
+<p id="demo26"></p>
+
+<script>
+const d26 = new Date("July 21, 1983 01:15:00");
+let hour4 = d26.getUTCHours();
+document.getElementById("demo26").innerHTML = hour4;
+</script>
+
+<p>===================</p>
+
+<p id="demo27"></p>
+
+<p>const d= new Date();</p>
+<p>let hour = d.getUTCHours();</p>
+<script>
+const d27 = new Date();
+let hour5 = d27.getUTCHours();
+document.getElementById("demo27").innerHTML = hour5;
+</script>
+    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The getUTCMilliseconds() Method</h2>
+
+            <p>getUTCMilliseconds() returns the milliseconds(0 to 999) of a date:</p>
+
+            <p>const d = new Date("July 21, 1983 01:15:00:195");</p>
+            <p>let ms = d.getUTCMilliseconds();</p>
+            <p>document.getElementById("demo").innerHTML = ms;</p>
+            <p id="demo28"></p>
+
+            <script>
+            const d28 = new Date("July 21, 1983 01:15:00:195");
+            let ms2 = d28.getUTCMilliseconds();
+            document.getElementById("demo28").innerHTML = ms2;
+            </script>
+
+            <p>===================</p>
+
+            <p>const d = new Date();</p>
+            <p>let ms = d.getUTCMilliseconds();</p>
+            <p id="demo29"></p>
+
+            <script>
+            const d29 = new Date();
+            let ms3 = d29.getUTCMilliseconds();
+            document.getElementById("demo29").innerHTML = ms3;
+            </script>               
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+ <h2>The getUTCMinutes() Method</h2>
+
+<p>getUTCMinutes() returns the minutes(0 to 59) of a date, according UTC:</p>
+
+<p>const d = new Date("July 21, 1983 01:15:00");</p>
+<p>let minutes = d.getUTCMinutes();</p>
+<p>document.getElementById("demo").innerHTML = minutes;</p>
+<p id="demo30"></p>
+
+<script>
+const d30 = new Date("July 21, 1983 01:15:00");
+let minutes4 = d30.getUTCMinutes();
+document.getElementById("demo30").innerHTML = minutes4;
+</script>
+
+<p>===================</p>
+
+<p>const d = new Date();</p>
+<p>let minutes = d.getUTCMinutes();</p>
+<p id="demo31"></p>
+
+<script>
+const d31 = new Date();
+let minutes5 = d31.getUTCMinutes();
+document.getElementById("demo31").innerHTML = minutes5;
+</script>   
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>The getUTCMonth() Method</h2>
+
+            <p>getUTCMonth() returns the month (from 0 to 11) of a date, according to universal time:</p>
+
+            <p>const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];</p>
+            <p>const d = new Date();</p>
+            <p>let name = month[d.getUTCMonth()];</p>
+            <p>document.getElementById("demo").innerHTML = name;</p>
+            <p id="demo32"></p>
+
+            <script>
+            const month2 = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+            const d32 = new Date();
+            let name = month2[d32.getUTCMonth()];
+            document.getElementById("demo32").innerHTML = name;
+            </script>
+
+            <p>===================</p>
+
+            <p>const d = new Date();</p>
+            <p>let month = d.getUTCMonth();</p>
+            <p id="demo33"></p>
+
+            <script>
+            const d33 = new Date();
+            let month3 = d33.getUTCMonth();
+            document.getElementById("demo33").innerHTML = month3;
+            </script>
+
+            <p><strong>Note:</strong> 0=January, 1=February, Etc.</p>               
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>The getUTCSeconds() Method</h2>
+
+<p>getUTCSeconds() returns the seconds(0 to 59) of a Date, according to universal time:</p>
+
+<p>const d3 = new Date();</p>
+<p>let seconds = d.getUTCSeconds();</p>
+<div><p id="demo34"></p></div>
+
+<script>
+const d34 = new Date();
+let seconds2 = d34.getUTCSeconds();
+document.getElementById("demo34").innerHTML = seconds2;
+</script>
+
+<p>===================</p>
+
+<p>Add zeros and colons to display the universal time:</p>
+
+<p>function addZero(i) { if (i < 10) {i = "0" + i} return i;}</p>
+<p>const d = new Date();</p>
+<p>let h = addZero(d.getUTCHours());</p>
+<p>let m = addZero(d.getUTCMinutes());</p>
+<p>let s = addZero(d.getUTCSeconds());</p>
+<p>let time = h + ":" + m + ":" + s;</p>
+<p>document.getElementById("demo").innerHTML = time;</p>
+<div><p id="demo35"></p></div>
+
+<script>
+function addZero(i) {
+  if (i < 10) {i = "0" + i}
+  return i;
+}
+
+const d35 = new Date();
+let h2 = addZero(d35.getUTCHours());
+let m2 = addZero(d35.getUTCMinutes());
+let s2 = addZero(d35.getUTCSeconds());
+let time2 = h2 + ":" + m2 + ":" + s2;
+document.getElementById("demo35").innerHTML = time2;
+</script>    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>Date.now()</h2>
+
+            <p>The internal clock in JavaScript starts at midnight January 1, 1970.</p>
+
+            <p>Date.now() returns the number of milliseconds since January 1, 1970 00:00:00 UTC:</p>
+
+            <p>let ms = Date.now();</p>
+            <p>document.getElementById("demo").innerHTML = ms;</p>
+            <div><p id="demo36"></p></div>
+
+            <script>
+            let ms4 = Date.now();
+            document.getElementById("demo36").innerHTML = ms4;
+            </script>
+
+            <p>===================</p>
+
+            <p>Calculate the number of years since January 1, 1970.</p>
+
+            <p>const minute6 = 1000 * 60;</p>
+            <p>const hour6 = minute6 * 60;</p>
+            <p>const day8 = hour6 * 24;</p>
+            <p>const year = day8 * 365;</p>
+            <p>let years = Math.round(Date.now() / year);</p>
+            <p>document.getElementById("demo").innerHTML = years;</p>
+
+            <div><p id="demo37"></p></div>
+
+            <script>
+            // Calculate milliseconds in a year
+            const minute6 = 1000 * 60;
+            const hour6 = minute6 * 60;
+            const day8 = hour6 * 24;
+            const year6 = day8 * 365;
+
+            // Divide Date.now() with a year
+            let years6 = Math.round(Date.now() / year6);
+            document.getElementById("demo37").innerHTML = years6;
+            </script>               
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>parse()</h2>
+
+<p>Syntax= Date.parse(datestring or a string representing a date)</p>
+
+<p>parse() parses a date string and returns the number of milliseconds since midnight January 1, 1970:</p>
+
+<p>let ms = Date.parse("March 21, 2012");</p>
+<p>document.getElementById("demo").innerHTML = ms;</p>
+<div><p id="demo38"></p></div>
+
+<script>
+let ms5 = Date.parse("March 21, 2012");
+document.getElementById("demo38").innerHTML = ms5;
+</script>
+
+<p>===================</p>
+
+<p>Calculate the number of years between March 21, 2012 and January 1, 1970:</p>
+
+<p>const minute = 1000 * 60;</p>
+<p>const hour = minute * 60;</p>
+<p>const day = hour * 24;</p>
+<p>const year = day * 365;</p>
+<p>const d = Date.parse("March 21, 2012");</p>
+<p>let years = Math.round(d / year);</p>
+<p>document.getElementById("demo").innerHTML = years;</p>
+
+<div><p id="demo39"></p></div>
+
+<script>
+// Calculate milliseconds in a year
+const minute7 = 1000 * 60;
+const hour7 = minute7 * 60;
+const day9 = hour7 * 24;
+const year7 = day9 * 365;
+
+// Compute years
+const d36 = Date.parse("March 21, 2012");
+let years7 = Math.round(d36 / year7);
+document.getElementById("demo39").innerHTML = years7;
+</script>    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>prototype</h2>
+
+            <p>The prototype constructor allows you to add new properties and methods to the Date() object.</p>
+
+            <p>Create a myMonth() method, returning the the month's name:</p>
+
+            <p id="demo40"></p>
+
+            <script>
+            Date.prototype.myMonth = function() {
+            if (this.getMonth() == 0) {return "January"};
+            if (this.getMonth() == 1) {return "February"};
+            if (this.getMonth() == 2) {return "March"};
+            if (this.getMonth() == 3) {return "April"};
+            if (this.getMonth() == 4) {return "May"};
+            if (this.getMonth() == 5) {return "June"};
+            if (this.getMonth() == 6) {return "July"};
+            if (this.getMonth() == 7) {return "August"};
+            if (this.getMonth() == 8) {return "September"};
+            if (this.getMonth() == 9) {return "October"};
+            if (this.getMonth() == 10) {return "November"};
+            if (this.getMonth() == 11) {return "December"};
+            };
+
+            const d37 = new Date();
+            document.getElementById("demo40").innerHTML = d37.myMonth();
+            </script>
+               
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>Date.setDate(day)</h2>
+
+<p>Syntax= Date.setDate(day)</p>
+
+<p>Output=Number of milliseconds between the date and January 1, 1970 00:00:00 UTC.</p>
+
+<ul>day= An integer representing the day (1 to 31).
+Higher and lower values are handeled with date maths:
+<li>0 gives the last day of the previous month</li>
+<li>-1 gives the day before the last day of the previous month</li>
+<li>32 gives the first day of the next month (if 31 days)</li>
+<li>41 gives the tenth day of the next month (if 31 days)</li>
+</ul>
+<p>setDate() sets the day of the month of a date:</p>
+
+<p>===================</p>
+<p>const d38 = new Date();</p>
+<p>d38.setDate(15);</p>
+<p>document.getElementById("demo41").innerHTML = d38;</p>
+<div><p id="demo41"></p></div>
+
+<script>
+const d38 = new Date();
+d38.setDate(15);
+document.getElementById("demo41").innerHTML = d38;
+</script>
+
+<p>===================</p>
+
+<p>const d39 = new Date();</p>
+<p>d39.setDate(0);</p>
+<div><p id="demo42"></p></div>
+
+<script>
+const d39 = new Date();
+d39.setDate(0);
+document.getElementById("demo42").innerHTML = d39;
+</script>
+
+<p>===================</p>
+
+<p>const d40 = new Date("July 21, 1983 01:15:00");</p>
+<p>d40.setDate(15);</p>
+<div><p id="demo43"></p></div>
+
+<script>
+const d40 = new Date("July 21, 1983 01:15:00");
+d40.setDate(15);
+document.getElementById("demo43").innerHTML = d40;
+</script>    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>Date.setFullYear(year, month, day)</h2>
+
+            <p>Syntax= Date.setFullYear(year, month, day)</p>
+
+            <ul><mark>year</mark>Required.
+            <li>The year. Negative values are allowed.</li>
+            </ul>
+
+            <ul><mark>month</mark>;Optional. The month (0 to 11).
+            Higher and lower values are handeled with date maths:
+            <li>-1 will result in the last month of the previous year</li>
+            <li>12 will result in the first month of the next year</li>
+            <li>13 will result in the second month of the next year</li>
+            </ul>
+
+            <ul><mark>day</mark>
+            <li>Check Date.setDate(day)</li>
+            </ul>
+
+            <p>setFullYear() sets the year of a date object:</p>
+
+            <p>===================</p>
+            <p>const d41 = new Date();</p>
+            <p>d41.setFullYear(2020);</p>
+            <div><p id="demo44"></p></div>
+
+            <script>
+            const d41 = new Date();
+            d41.setFullYear(2020);
+            document.getElementById("demo44").innerHTML = d41;
+            </script>
+
+            <p>===================</p>
+            <p>const d42 = new Date();</p>
+            <p>d42.setFullYear(2020, 10, 3);</p>
+            <div><p id="demo45"></p></div>
+
+            <script>
+            const d42 = new Date();
+            d42.setFullYear(2020, 10, 3);
+            document.getElementById("demo45").innerHTML = d42;
+            </script>
+
+            <p><strong>Note:</strong> JavaScript counts months from 0 to 11. Month 10 is November.</p>
+
+            <p>===================</p>
+
+            <p>Display the date six months ago:</p>
+
+            <p>const d43 = new Date();</p>
+            <p>d43.setFullYear(d43.getFullYear(), d43.getMonth() - 6);</p>
+            <p>document.getElementById("demo46").innerHTML = d43;</p>
+            <div><p id="demo46"></p></div>
+
+            <script>
+            const d43 = new Date();
+            d43.setFullYear(d43.getFullYear(), d43.getMonth() - 6);
+            document.getElementById("demo46").innerHTML = d43;
+            </script>
+                            
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>Date.setHours(hour, min, sec, millisec)</h2>
+
+<p>Syntax= Date.setHours(hour, min, sec, millisec)</p>
+
+<ul><mark>hour</mark>	Required. The Hours.
+0 to 23, but other values are allowed:
+<li>-1 gives the last hour of the previous day</li>
+<li>24 gives the first hour of the next day</li>
+</ul>
+
+<ul><mark>min</mark>	Optional. The Minutes.
+0 to 59, but other values are allowed:
+<li>-1 gives the last minute of the previous hour</li>
+<li>60 gives the first minute of the next hour</li>
+</ul>
+
+<ul><mark>sec</mark>	Optional. The seconds.
+0 to 59, but other values are allowed:
+<li> -1 gives the last second of the previous minute</li>
+<li>60 gives the first second of the next minute</li>
+</ul>
+
+<ul><mark>millisec</mark>	Optional. The milliseconds.
+0 to 999, but other values are allowed:
+<li>-1 gives the last millisecond of the previous second</li>
+<li>1000 gives the first millisecond of the next second</li>
+</ul>
+
+<p>setHours() can set the hour, the minute, and the second of a date object:</p>
+
+<p>===================</p>
+<p>const d = new Date();</p>
+<p>d.setHours(15, 35, 1);</p>
+<div><p id="demo47"></p></div>
+
+<script>
+const d44 = new Date();
+d44.setHours(15, 35, 1);
+document.getElementById("demo47").innerHTML = d44;
+</script>
+
+<p>===================</p>
+
+<p>const d = new Date();</p>
+<p>d.setHours(d.getHours() - 48);</p>
+<p>document.getElementById("demo").innerHTML = d;</p>
+<div><p id="demo48"></p></div>
+
+<script>
+const d45 = new Date();
+d45.setHours(d45.getHours() - 48);
+document.getElementById("demo48").innerHTML = d45;
+</script>    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>setMilliseconds()</h2>
+
+            <p>setMilliseconds() sets the milliseconds of a date object:</p>
+
+            <p>d46.setMilliseconds(192);</p>
+            <div><p id="demo49"></p></div>
+
+            <script>
+            const d46 = new Date();
+            d46.setMilliseconds(192);
+            document.getElementById("demo49").innerHTML = d46.getMilliseconds();
+            </script>
+
+            <p>===================</p>
+
+            <h2>setMinutes()</h2>
+
+            <p>setMinutes() sets the minutes of a date object:</p>
+
+            <p>d47.setMinutes(17);</p>
+            <div><p id="demo50"></p></div>
+
+            <script>
+            const d47 = new Date();
+            d47.setMinutes(17);
+            document.getElementById("demo50").innerHTML = d47;
+            </script>
+
+            <p>===================</p>
+
+            <h2>setMonth()</h2>
+
+            <p>setMonth() sets the month of a date object:</p>
+
+            <p>d48.setMonth(4);</p>
+            <div><p id="demo51"></p></div>
+
+            <script>
+            const d48 = new Date();
+            d48.setMonth(4);
+            document.getElementById("demo51").innerHTML = d48;
+            </script>
+
+            <p>===================</p>
+
+            <h2>setSeconds()</h2>
+
+            <p>setSeconds() sets the seconds of a date object:</p>
+
+            <p>d49.setSeconds(35);</p>
+            <div><p id="demo52"></p></div>
+
+            <script>
+            const d49 = new Date();
+            d49.setSeconds(35);
+            document.getElementById("demo52").innerHTML = d49;
+            </script>
+                          
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>Date.setTime(millisec)</h2>
+
+<p>setTime() sets a date by adding milliseconds to January 1, 1970:</p>
+
+<div><p id="demo53"></p></div>
+
+<script>
+const d50 = new Date();
+d50.setTime(1332403882588);
+document.getElementById("demo53").innerHTML = d50;
+</script>
+   
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>setUTCFullYear()</h2>
+
+            <p>Syntax= Date.setUTCFullYear(year, month, day)</p>
+
+            <ul><mark>year</mark>Required.
+            <li>A value representing the year, negative values are allowed</li>
+            </ul>
+
+            <ul><mark>month</mark>Optional. An integer representing the month
+            Expected values are 0-11, but other values are allowed:
+            <li>-1 will result in the last month of the previous year</li>
+            <li>12 will result in the first month of the next year</li>
+            <li>13 will result in the second month of the next year</li>
+            </ul>
+
+            <ul><mark>day</mark>An integer representing the day of month
+            Expected values are 1-31, but other values are allowed:
+            <li>0 will result in the last hour of the previous month</li>
+            <li>-1 will result in the hour before the last hour of the previous month
+            If the month has 31 days:</li>
+            <li>32 will result in the first day of the next month
+            If the month has 30 days:</li>
+            <li>32 will result in the second day of the next month</li>
+            </ul>
+
+            <p>===================</p>	 
+
+            <p>setUTCFullYear() sets the year (according UTC) of a date object:</p>
+
+            <p>d51.setUTCFullYear(2015);</p>
+            <div><p id="demo54"></p></div>
+
+            <script>
+            const d51 = new Date();
+            d51.setUTCFullYear(2015);
+            document.getElementById("demo54").innerHTML = d51;
+            </script>                
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>DateVar.setUTCDate(day)</h2>
+
+<p>setUTCDate() sets the date (according to UTC) of a date object:</p>
+
+<div><p id="demo55"></p></div>
+
+<script>
+const d52 = new Date();
+d52.setUTCDate(15);
+document.getElementById("demo55").innerHTML = d52;
+</script>
+
+<p>===================</p>	
+
+<h2>setUTCMonth()</h2>
+
+<p>setUTCMonth() method sets the month (according to UTC time) of a date object:</p>
+
+<div><p id="demo56"></p></div>
+
+<p><b>Note:</b> 0=January, 1=February etc.</p>
+
+<script>
+const d53 = new Date();
+d53.setUTCMonth(4);
+document.getElementById("demo56").innerHTML = d53;
+</script>
+
+<p>===================</p>	
+
+<h2>setUTCHours()</h2>
+
+<p>setUTCHours() method sets the hour (according to UTC) of a date object:</p>
+
+<div><p id="demo57"></p></div>
+
+<script>
+const d54 = new Date();
+d54.setUTCHours(15);
+document.getElementById("demo57").innerHTML = d54;
+</script>
+
+<p>===================</p>	
+
+<h2>setUTCMinutes()</h2>
+
+<p>setUTCMinutes() sets the minutes (according to UTC time) of a date object:</p>
+
+<div><p id="demo58"></p></div>
+
+<script>
+const d55 = new Date();
+d55.setUTCMinutes(17);
+document.getElementById("demo58").innerHTML = d55;
+</script>
+
+<p>===================</p>	
+
+<h2>setUTCSeconds()</h2>
+
+<p>setUTCSeconds() sets the seconds (according to UTC time) of a date object:</p>
+
+<div><p id="demo59"></p></div>
+
+<script>
+const d56 = new Date();
+d56.setUTCSeconds(35);
+document.getElementById("demo59").innerHTML = d56;
+</script>
+
+<p>===================</p>	
+
+<h2>setUTCMilliseconds()</h2>
+
+<p>setUTCMilliseconds() sets the milliseconds (according to UTC time) of a date object:</p>
+
+<div><p id="demo60"></p></div>
+
+<script>
+const d57 = new Date();
+d57.setUTCMilliseconds(192);
+document.getElementById("demo60").innerHTML = d57.getUTCMilliseconds();
+</script>
+    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>toDateString()</h2>
+
+            <p>toDateString() returns the date of a date object as a readable string:</p>
+
+            <p>const d58 = new Date();</p>
+            <p>let text1 = d58.toDateString();</p>
+            <p>document.getElementById("demo61").innerHTML = text1;</p>
+            <div><p id="demo61"></p></div>
+
+            <script>
+            const d58 = new Date();
+            let text1 = d58.toDateString();
+            document.getElementById("demo61").innerHTML = text1;
+            </script>
+                
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>toISOString()</h2>
+
+<p>toISOString() returns a date as string, using the ISO standard:</p>
+
+<p>const d59 = new Date();</p>
+<p>let text2 = d59.toISOString();</p>
+<div><p id="demo62"></p></div>
+
+<script>
+const d59 = new Date();
+let text2 = d59.toISOString();
+document.getElementById("demo62").innerHTML = text2;
+</script>
+    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>toJSON()</h2>
+
+            <p>toJSON() returns a date as a string, using JSON date formatting:</p>
+
+            <p>const d60 = new Date();</p>
+            <p>let text3 = d60.toJSON();</p>
+            <div><p id="demo63"></p></div>
+
+            <script>
+            const d60 = new Date();
+            let text3 = d60.toJSON();
+            document.getElementById("demo63").innerHTML = text3;
+            </script>                
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>toLocaleDateString()</h2>
+
+<p>toLocaleDateString() returns the date (not the time) of a date, as a string, using locale conventions:</p>
+
+<p>const d61 = new Date();</p>
+<p>let text4 = d61.toLocaleDateString();</p>
+<div><p id="demo64"></p></div>
+
+<script>
+const d61 = new Date();
+let text4 = d61.toLocaleDateString();
+document.getElementById("demo64").innerHTML = text4;
+</script>
+    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>toLocaleTimeString()</h2>
+
+            <p>toLocaleTimeString() returns the time portion of a date, as a string, using locale conventions:</p>
+
+            <p>const d62 = new Date();</p>
+            <p>let text5 = d62.toLocaleTimeString();</p>
+            <div><p id="demo65"></p></div>
+
+            <script>
+            const d62 = new Date();
+            let text5 = d62.toLocaleTimeString();
+            document.getElementById("demo65").innerHTML = text5;
+            </script>                
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>toLocaleString() </h2>
+
+<p>toLocaleString() returns a date as a string, using locale settings:</p>
+
+<p>const d63 = new Date();</p>
+<p>let text6 = d63.toLocaleString();</p>
+<div><p id="demo66"></p></div>
+
+<script>
+const d63 = new Date();
+let text6 = d63.toLocaleString();
+document.getElementById("demo66").innerHTML = text6;
+</script>    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>toString()</h2>
+
+            <p>toString() returns a date object as a string:</p>
+
+            <p>const d64 = new Date();</p>
+            <p>let text7 = d64.toString();</p>
+            <div><p id="demo67"></p></div>
+
+            <script>
+            const d64 = new Date();
+            let text7 = d64.toString();
+            document.getElementById("demo67").innerHTML = text7;
+            </script>
+                
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>toTimeString()</h2>
+
+<p>toTimeString() returns the time portion of a date object as a string:</p>
+
+<p>const d65 = new Date();</p>
+<p>let text8 = d65.toTimeString();</p>
+<div><p id="demo68"></p></div>
+
+<script>
+const d65 = new Date();
+let text8 = d65.toTimeString();
+document.getElementById("demo68").innerHTML = text8;
+</script>    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>toUTCString()</h2>
+
+            <p>toUTCString() returns a date object as a string, according to UTC:</p>
+
+            <p>const d66 = new Date();</p>
+            <p>let text9 = d66.toUTCString();</p>
+            <div><p id="demo69"></p></div>
+
+            <script>
+            const d66 = new Date();
+            let text9 = d66.toUTCString();
+            document.getElementById("demo69").innerHTML = text9;
+            </script>                
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+<div>
+<h2>Date.UTC()</h2>
+
+<p>Date.UTC() returns the number of milliseconds between a date and January 1, 1970, according to UTC:</p>
+
+<p>let ms6 = Date.UTC(2020, 02, 30);</p>
+<p>document.getElementById("demo70").innerHTML = ms6;</p>
+<div><p id="demo70"></p></div>
+
+<script>
+let ms6 = Date.UTC(2020, 02, 30);
+document.getElementById("demo70").innerHTML = ms6;
+</script>
+    
+</div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+            <div>
+            <h2>valueOf()</h2>
+
+            <p>valueOf() returns the primitive value of a date object:</p>
+
+            <p>const d67 = new Date();</p>
+            <p>let ms7 = d67.valueOf();</p>
+            <p>document.getElementById("demo71").innerHTML = ms7;</p>
+            <div><p id="demo71"></p></div>
+
+            <script>
+            const d67 = new Date();
+            let ms7 = d67.valueOf();
+            document.getElementById("demo71").innerHTML = ms7;
+            </script>                
+            </div>
+
+<p>++++++++++++++++++++++++++++++++++</p>
+
+</body>
+</html>
