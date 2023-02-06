@@ -11,6 +11,7 @@
                  margin:15px 5px 5px 5px;}   
         //div>div>div{background-color:pink;}
         .democlass {color: red;}
+        //.para {background-color:yellow;}
     </style>    
 </head>
 
@@ -260,22 +261,159 @@ document.getElementById("myH4").style.color = "red";
     </div>
 
 <div>
-<h3>document.createElement(<i>element</i>)</h3>    
+<h3>document.createElement(<i>element or type</i>)</h3>    
+
+<p>Create a p element with some text:</p>
+
+<p style="background-color:yellow;"> <b>?Supposed answer:</b> This is a paragraph. </p>
+
+<script>
+// Create element:
+const para= document.createElement("p");
+para.body.innerHTML = "This is a paragraph.";
+
+// Append to body:
+document.body.appendChild(para);
+</script>
+
+        <div>
+        <p><b> [Inside script tag]</b></p>
+
+        <p><b> Create element:</b></p>
+        <p>const para= document.createElement("p");</p>
+        <p>para.innerText = "This is a paragraph.";</p>
+
+        <p>+++++</p>
+        <p><b>to show result of added element: used appendChild() by appending it to body</b></p>
+        <p>document.body.appendChild(para);</p>
+        </div>
+
 </div>
 
         <div>
-        <h3>document.removeChild(<i>element</i>)</h3>     
+        <h3>document.removeChild(<i>element</i>)</h3>  
+
+        <p>Click "Remove" to remove the first item from the list:</p>
+        <button onclick="myFunction2()">Remove</button>
+
+        <ul id="myList1">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+        </ul>
+
+        <script>
+        function myFunction2() {
+        const list = document.getElementById("myList1");
+        list.removeChild(list.firstElementChild);
+        }
+        </script>
+
+        <p>+++++</p>
+        <p><b>ul id="myList1"</b></p>
+
+        <p><b>inside button tag:</b> onclick="myFunction2()">Append</p>
+
+        <p><b>inside script tag: </b>function myFunction2() {
+            <br>const list = document.getElementById("myList1");
+            <br> list.removeChild(list.firstElementChild); } </p>   
         </div>
 
 <div>
 <h3>document.appendChild(<i>element</i>)</h3>  
 
+<ul id="myList">
+  <li>Coffee</li>
+  <li>Tea</li>
+</ul>
+
+<p>Click "Append" to append an item to the end of the list:</p>
+
+<button onclick="myFunction1()">Append</button>
+
+<script>
+function myFunction1() {
+
+// Create an "li" node:
+const node = document.createElement("li");
+
+// Create a text node:
+const textnode = document.createTextNode("Water");
+
+// Append the text node to the "li" node:
+node.appendChild(textnode);
+
+// Append the "li" node to the list:
+document.getElementById("myList").appendChild(node);
+}
+</script>
+
 <p>+++++</p>
-<p>append=add</p>   
+
+<p>append=add</p> 
+
+<p><b>ul id="myList"</b></p>
+
+<p><b>inside button tag:</b> onclick="myFunction1()">Append</p>
+
+<p><b>inside script tag: </b>function myFunction1() {
+	<br>
+    // Create an "li" node:<br>
+    	const node = document.createElement("li");
+	<br>
+    // Create a text node:<br>
+    	const textnode = document.createTextNode("Water");
+	<br>
+    // Append the text node to the "li" node:<br>
+    	node.appendChild(textnode);
+	<br>
+    // Append the "li" node to the list:<br>
+    	document.getElementById("myList").appendChild(node);}</p>
+
+<p>When button clicked. new list of water will be added each time button clicked</p>
+
 </div>
 
         <div>
-        <h3>document.replaceChild(<i>new, old</i>)</h3>     
+        <h3>document.replaceChild(<i>new, old</i>)</h3>  
+
+        <ul id="myList3">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+
+        <p>Click "Replace" to replace the first item in the the list.</p>
+
+        <button onclick="myFunction3()">"Replace"</button>
+
+        <p>This example replaces the Text node "Coffee" with a Text node "Water". Replacing the entire li element is also an alternative.</p>
+
+        <script>
+        function myFunction3() {
+        // Select first child element:
+        const element = document.getElementById("myList3").children[0];
+
+        // Create a new text node:
+        const newNode = document.createTextNode("Water");
+
+        // Replace the text node:
+        element.replaceChild(newNode, element.childNodes[0]);
+        }
+        </script>
+        
+        <p>+++++</p>
+        <p><b>ul id="myList3"</b></p>
+
+        <p><b>inside button tag:</b> onclick="myFunction3()">"Replace"</p>
+
+        <p><b>inside script tag: </b>function myFunction3() {
+            <br>// Select first child element:<br>
+                const element = document.getElementById("myList3").children[0];
+            <br>// Create a new text node:<br>
+                const newNode = document.createTextNode("Water");
+            <br>// Replace the text node:<br>
+                element.replaceChild(newNode, element.childNodes[0]); }
         </div>
 
 </div>
