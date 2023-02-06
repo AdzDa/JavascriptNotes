@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        h2{background-color:green;}
+        h3{background-color:pink;}
+        div{border:1px solid red;
+            margin:30px 2px 0px 2px ;} 
+        div>div {border:1px solid blue;
+                 margin:15px 5px 5px 5px;}   
+        //div>div>div{background-color:pink;}
+        .democlass {color: red;}
+    </style>    
+</head>
+
+<body>
+
+<h1>JavaScript HTML DOM</h1>
+
+<div>
+<h2>Finding HTML Elements</h2>
+
+    <div>
+        <h3>by Id</h3>
+
+        <p id="intro">Finding HTML Elements by Id</p>
+        <p>This example demonstrates the <b>getElementsById</b> method.</p>
+
+        <p>+++++</p>
+        <p>const element = document.getElementById("intro");</p>
+        <p>document.getElementById("demo").innerHTML = 
+        "The text from the intro paragraph is: " + element.innerHTML;</p>
+        
+        <div style="background-color:yellow;"><p id="demo"></p></div>
+
+        <script>
+        const element = document.getElementById("intro");
+
+        document.getElementById("demo").innerHTML = 
+        "The text from the intro paragraph is: " + element.innerHTML;
+
+        </script>
+    </div> 
+
+    <div>
+        <h3>by Tag Name</h3>
+
+        <div id="main">
+        <p>Finding HTML Elements by Tag Name</p> <!--The text in first paragraph (index 0)-->
+        <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+        </div>
+
+        <p>const element1 = document.getElementsByTagName("p");</p>
+        <p>document.getElementById("demo1").innerHTML = 'The text in first paragraph (index 0) is: ' + element1[0].innerHTML;</p>
+
+                <div style="background-color:yellow;"><p id="demo1"></p></div>
+
+                <script>
+                const element1 = document.getElementsByTagName("p");
+
+                document.getElementById("demo1").innerHTML = 'The text in first paragraph (index 0) is: ' + element1[0].innerHTML;
+                </script>    
+                
+        <p>===============</p>
+
+        <p>const x = document.getElementById("main");</p>
+        <p>const y = x.getElementsByTagName("p");</p>
+        <p>document.getElementById("demo2").innerHTML = 
+                'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;</p>
+
+               <div style="background-color:yellow;"><p id="demo2"></p></div>
+
+                <script>
+                const x = document.getElementById("main");
+                const y = x.getElementsByTagName("p");
+
+                document.getElementById("demo2").innerHTML = 
+                'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;
+                </script>
+    </div>
+                
+    <div>
+        <h3>by Class Name</h3>
+        <p>Finding HTML Elements by Class Name.</p>
+
+        <div>
+            <p class="intro1">Hello World!</p>
+            <p class="intro1">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+        </div>
+        
+        <p>const x1 = document.getElementsByClassName("intro1");</p>
+        <p>document.getElementById("demo3").innerHTML = 
+        'The first paragraph (index 0) with class="intro1" is: ' + x1[0].innerHTML;</p>
+        <div style="background-color:yellow;"><p id="demo3"></p></div>
+
+        <script>
+        const x1 = document.getElementsByClassName("intro1");
+        document.getElementById("demo3").innerHTML = 
+        'The first paragraph (index 0) with class="intro1" is: ' + x1[0].innerHTML;
+        </script>
+
+    </div>
+
+    <div>
+
+    <h3>by Query Selector </h3>    
+
+    <p>Finding HTML Elements by Query Selector</p>
+
+    <div>
+        <p class="intro2">Hello World!.</p>
+        <p class="intro2">This example demonstrates the <b>querySelectorAll</b> method.</p>
+    </div>
+    
+    <p>const x2 = document.querySelectorAll("p.intro2");</p>
+    <p>document.getElementById("demo4").innerHTML = 
+    'The first paragraph (index 0) with class="intro2" is: ' + x2[0].innerHTML;</p>
+    <div style="background-color:yellow;"><p id="demo4"></p></div>
+
+    <script>
+    const x2 = document.querySelectorAll("p.intro2");
+    document.getElementById("demo4").innerHTML = 
+    'The first paragraph (index 0) with class="intro2" is: ' + x2[0].innerHTML;
+    </script>
+        
+    </div>
+
+
+</div>
+
+<p>===============</p>
+
+<div>
+<h2>Changing HTML Content</h2>
+
+<div>
+    <h3><i>element</i>.innerHTML</h3>
+
+        <div>
+            <h3>JavaScript can Change HTML</h3>
+
+            <p>document.getElementById("p1").innerHTML = "New text!";</p>
+            <p style="background-color:yellow;" id="p1">Hello World!</p>
+
+            <script>
+            document.getElementById("p1").innerHTML = "New text!";
+            </script>
+
+            <p>The paragraph above was changed by a script from id=p1 is Hello World!.</p>
+        </div>
+
+        <div>
+        <h4 style="background-color:yellow;" id="id01">Old Heading</h4>
+
+        <p>const element2 = document.getElementById("id01");</p>
+        <p>element2.innerHTML = "New Heading";</p>
+
+        <script>
+        const element2 = document.getElementById("id01");
+        element2.innerHTML = "New Heading";
+        </script>
+
+        <p>JavaScript changed "Old Heading" of id=id01 to "New Heading".</p>    
+        </div>   
+
+        <div>
+
+        <p>document.getElementById("demo5").innerHTML = "Date : " + Date();</p>    
+        <p style="background-color:yellow;" id="demo5"></p>
+
+        <script>
+        document.getElementById("demo5").innerHTML = "Date : " + Date();
+        </script>  
+
+        </div> 
+</div>
+    <div>
+
+    <h3><i>element</i>.src</h3>
+    <div style="background-color:yellow;">
+    <img id="image" src="smiley.gif" width="160" height="120" alt="smiley">
+    </div>    
+    
+    <p><b>inside img tag:</b> id="image" src="smiley.gif" width="160" height="120" alt="smiley" </p>
+    <p>document.getElementById("image").src = "landscape.jpg";</p>
+
+    <script>
+    document.getElementById("image").src = "data:image/jpeg;base64,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";
+    </script>
+
+    <p>+++++</p>
+    <p>The original image was smiley.gif, but the script changed it to "url"</p>
+        
+    </div>
+
+        <div>
+        <h3><i>element</i>.attribute</h3>    
+        </div>
+
+<div>
+<h3><i>element</i>.style.property</h3>
+
+<h4 style="background-color:yellow;" id="myH4">The Element Object</h4>
+
+<p>+++++</p>
+
+<p>document.getElementById("myH4").style.color = "red";</p>
+<p>h4 of "The Element Object" is initially color:black by default or even wrote inside style tag</p>
+
+<script>
+document.getElementById("myH4").style.color = "red";
+</script>
+</div>
+
+        <div>
+        <h3><i>element</i>.setAttribute(<i>attribute</i>,<i>value</i>)</h3>  
+        <h4 style="background-color:yellow;" id="myH4a">The Element Object</h4>
+
+        <p>Click "Add Class" to add a class attribute to the h4 element:</p>
+
+        <button onclick="myFunction()">Add Class</button>
+
+        <script>
+        function myFunction() {
+        document.getElementById("myH4a").setAttribute("class", "democlass");}
+        </script>
+
+        <p>+++++</p>
+
+        <p><b>inside style tag</b> .democlass {color: red;}</p>
+        <p><b>inside button tag</b> onclick="myFunction()">Add Class</p>
+        <p><b>function myFunction()</b> { document.getElementById("myH4").setAttribute("class","democlass"); }</p>
+        <p>when button clicked; myFunction() will be run to change attribute/initial value to new value of default black to red</p>
+        
+        </div>
+        </div>
+
+<p>===============</p>
+
+<div>
+<h2>Adding/Deleting Element</h2>
+
+    <div>
+
+    <h3>document.write();</h3>
+    <p>Bla, bla, bla</p>
+
+    <div style="background-color:yellow;">
+    <script>
+    document.write(Date());
+    </script>
+    </div>
+
+    <p>Bla, bla, bla</p>   
+
+    <p>+++++</p>
+    <p>document.write(Date());</p> 
+    <p>script tag in between both of the p tag (bla bla)</p>  
+    </div>
+
+<div>
+<h3>document.createElement(<i>element</i>)</h3>    
+</div>
+
+        <div>
+        <h3>document.removeChild(<i>element</i>)</h3>     
+        </div>
+
+<div>
+<h3>document.appendChild(<i>element</i>)</h3>  
+
+<p>+++++</p>
+<p>append=add</p>   
+</div>
+
+        <div>
+        <h3>document.replaceChild(<i>new, old</i>)</h3>     
+        </div>
+
+</div>
+
+<p>===============</p>
+
+<h3><i></i></h3>
+<h3></h3>
+<p></p>
+<p>+++++</p>
+<p>===============</p>
+<div style="background-color:yellow;"><p id="demo"></p></div>
+<h2></h2>
+<div></div>
+
+</body>
+</html>
