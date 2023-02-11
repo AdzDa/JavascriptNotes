@@ -5,13 +5,22 @@
     <style>
         h2{background-color:green;}
         h3{background-color:pink;}
-        div{border:1px solid red;
-            margin:30px 2px 0px 2px ;} 
-        div>div {border:1px solid blue;
-                 margin:15px 5px 5px 5px;}   
-        //div>div>div{background-color:pink;}
+        h4{background-color:orange;}
+                div{border:1px solid red;
+                    margin:30px 2px 0px 2px ;} 
+                div>div {border:1px solid blue;
+                        margin:15px 5px 5px 5px;}   
+                div>div>div {border:1px solid black;
+                //div>div>div{background-color:pink;}
+        
         .democlass {color: red;}
+
+        input.valid1:valid { background-color: cyan}
+        input.invalid1:invalid { border: 2px solid red;}
+
         //.para {background-color:yellow;}
+        //input:optional { background-color: gray;}
+        //input:required { background-color: red; }
     </style>    
 </head>
 
@@ -422,133 +431,198 @@ document.getElementById("myList").appendChild(node);
 
 <div>
 
-    <h2>DOM Form</h2>
+<h2>DOM Form</h2>
+
+    <div>
+        <h3>JavaScript Validation</h3>
     
         <div>
-            <h3>JavaScript Validation</h3>
         
-            <div>
-            
-            <p><b>Inside script tag:</b></p>
-            <p>function validateForm() {
-                    <br>let x = document.forms["myForm"]["fname"].value;
-                    <br>if (x == "") {
-                        <br>alert("Name must be filled out");
-                        <br>return false; 
-                                 }
-            }</p>
-    
-            <p><b>Inside form tag:</b></p>
-                    <p>name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post"</p>
-                    <p><i>inside input tag:</i></p>
-                    <p>type="text" name="fname"</p>
-                    <p><i>inside input tag:</i></p>
-                    <p>type="submit" value="Submit"</p>
-    
-            <p>+++++</p>
-            <script>
-            function validateForm() {
-            let x = document.forms["myForm"]["fname"].value;
-            if (x == "") {
-                alert("Name must be filled out");
-                return false; 
-                         }
-                                    }
-            </script>
-    
-                <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
-                <br>
-                Name: <input type="text" name="fname">
-                <input type="submit" value="Submit">
-                </form>
-                <br>
-    
-            </div>
-     
-                <div>
-                <p>Please input a number between 1 and 10:</p>
-    
-                <input id="numb" type=number>
-                <button type="button" onclick="myFunction8()">Submit</button>
-    
-                <p id="demo6"></p>
-                <p>+++++</p>
-    
-                <p><b>Inside input tag:</b></p>
-                <p>id="numb" type=number</p>
-                    <p><b>Inside button tag:</b></p>
-                    <p>type="button" onclick="myFunction8()">Submit</p>
-                        <p><b>Inside script tag:</b></p>
-                        <p>
-                            function myFunction8() {
-                                <br>// Get the value of the input field with id="numb"
-                                <br>let x3 = document.getElementById("numb").value;
-                                    <br>// If x is Not a Number or less than one or greater than 10
-                                    <br>let text;
-                                        <br>if (isNaN(x3) || x3 < 1 || x3 > 10) {
-                                            <br>text = "Input not valid";
-                                        <br>} else {
-                                            <br>text = "Input OK";}
-                                        <br>document.getElementById("demo6").innerHTML = text; }
-                        </p>
-    
-                           
-                        <script>
-                        function myFunction8() {
-                        // Get the value of the input field with id="numb"
-                        let x3 = document.getElementById("numb").value;
-                        // If x is Not a Number or less than one or greater than 10
-                        let text;
-                        if (isNaN(x3) || x3 < 1 || x3 > 10) {
-                            text = "Input not valid";
-                        } else {
-                            text = "Input OK";
-                        }
-                        document.getElementById("demo6").innerHTML = text;
-                        }
-                        </script>
-    
-                 </div>
-     
-            <div>
-    
-            <p><b>Inside form tag:</b></p>   
-            <p>action="/action_page.php" method="post"</p>
-                <p><i>inside input tag:</i></p> 
-                <p>type="text" name="fname" required</p>
-                    <p><i>inside input tag:</i></p> 
-                    <p>type="submit" value="Submit"</p>
-    
-            <p>+++++</p>
+        <p><b>Inside script tag:</b></p>
+        <p>function validateForm() {
+                <br>let x = document.forms["myForm"]["fname"].value;
+                <br>if (x == "") {
+                    <br>alert("Name must be filled out");
+                    <br>return false; 
+                             }
+        }</p>
+
+        <p><b>Inside form tag:</b></p>
+                <p>name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post"</p>
+                <p><i>inside input tag:</i></p>
+                <p>type="text" name="fname"</p>
+                <p><i>inside input tag:</i></p>
+                <p>type="submit" value="Submit"</p>
+
+        <p>+++++</p>
+        <script>
+        function validateForm() {
+        let x = document.forms["myForm"]["fname"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false; 
+                     }
+                                }
+        </script>
+
+            <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
             <br>
-            <form action="/action_page.php" method="post">
-                <input type="text" name="fname" required>
-                <input type="submit" value="Submit">
+            Name: <input type="text" name="fname">
+            <input type="submit" value="Submit">
             </form>
-    
-            <p>If you click submit, without filling out the text field, 
-            your browser will display an error message.</p>
-    
-            </div>
-    
+            <br>
+
         </div>
-    
+ 
+            <div>
+            <p>Please input a number between 1 and 10:</p>
+
+            <input id="numb" type=number>
+            <button type="button" onclick="myFunction8()">Submit</button>
+
+            <p id="demo6"></p>
+            <p>+++++</p>
+
+            <p><b>Inside input tag:</b></p>
+            <p>id="numb" type=number</p>
+                <p><b>Inside button tag:</b></p>
+                <p>type="button" onclick="myFunction8()">Submit</p>
+                    <p><b>Inside script tag:</b></p>
+                    <p>
+                        function myFunction8() {
+                            <br>// Get the value of the input field with id="numb"
+                            <br>let x3 = document.getElementById("numb").value;
+                                <br>// If x is Not a Number or less than one or greater than 10
+                                <br>let text;
+                                    <br>if (isNaN(x3) || x3 < 1 || x3 > 10) {
+                                        <br>text = "Input not valid";
+                                    <br>} else {
+                                        <br>text = "Input OK";}
+                                    <br>document.getElementById("demo6").innerHTML = text; }
+                    </p>
+
+                       
+                    <script>
+                    function myFunction8() {
+                    // Get the value of the input field with id="numb"
+                    let x3 = document.getElementById("numb").value;
+                    // If x is Not a Number or less than one or greater than 10
+                    let text;
+                    if (isNaN(x3) || x3 < 1 || x3 > 10) {
+                        text = "Input not valid";
+                    } else {
+                        text = "Input OK";
+                    }
+                    document.getElementById("demo6").innerHTML = text;
+                    }
+                    </script>
+
+             </div>
+ 
+        <div>
+
+        <p><b>Inside form tag:</b></p>   
+        <p>action="/action_page.php" method="post"</p>
+            <p><i>inside input tag:</i></p> 
+            <p>type="text" name="fname" required</p>
+                <p><i>inside input tag:</i></p> 
+                <p>type="submit" value="Submit"</p>
+
+        <p>+++++</p>
+        <br>
+        <form action="/action_page.php" method="post">
+            <input type="text" name="fname" required>
+            <input type="submit" value="Submit">
+        </form>
+
+        <p>If you click submit, without filling out the text field, 
+        your browser will display an error message.</p>
+
+        </div>
+
+    </div>
+
+    <div>
+        <h3>Constraint Validation CSS Pseudo Selectors</h3>
+
+        <div>
+
+        <h4>optional selector</h4>
+        <div >
+            <p>An optional input element:
+            <br><input style="background-color: gray;" optional></p>
+        </div>
         
-    
-    
-    
-        
-    
-        <div></div>
-    
-        <div></div>
+        <p><b>nothing inside input tag:</b> style="background-color: gray;" optional</p>
+        <p>optional can be written or not</p>
+        <p><b>Inside style tag (in head):</b> input:optional { background-color: gray; }</p>
+        <p>The :optional selector selects form elements with no "required" attribute.</p>
+
+        <p>===============</p>
+
+        <h4>required selector</h4>
+        <div>
+            <p>A required input element:
+            <br><input style="background-color: cyan;" required></p>
+        </div>
+                    
+        <p><b>Inside input tag:</b> style="background-color: cyan;" required</p>
+        <p>css style can also be put <b>Inside style tag (in head):</b> input:required { background-color: cyan; }</p>
+        <p>The :required selector selects form elements with a "required" attribute.</p>
+
+        </div>
+
+                <div>
+                    <h4>valid/ invalid selector</h4>
+                    
+                    <input class="valid1" type="email" value="support@example.com">
+                    <input class="invalid1" type="email" value="support@example.com">
+
+                        <p><b>Inside input tag 1:</b>  class="valid1" type="email" value="support@example.com"</p>
+                        <p><b>Inside input tag 2:</b>  class="invalid1" type="email" value="support@example.com"</p>
+                   
+                        <p><b>Inside style tag:</b> <br> input.valid1:valid { background-color: cyan}
+                            <br>input.invalid1:invalid { border: 2px solid red;}</p>
+                    
+                    <p>+++++</p>
+                    <p><b>Supposed action</b></p>
+                    <p><b>when valid email:</b> background-color is cyan</p>
+                    <p><b>when invalid email:</b> border-color is red</p>
+                    <p>can also be done using js script tag with if else()</p>
+                    <p>can also used only one input without className and used input 
+                        :valid{ ;} :invalid{ ;} in style tag</p>
+                </div>
+
+
+        <div>
+
+        </div>
+
+
+                <div>
+
+                </div>
+
+
+        <div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <div></div>
 </div>
 
+<p>===============</p>
 
-
-
-
-
+<p><b></b></p>
+<b></b>
 <h3><i></i></h3>
 <h3></h3>
 <p></p>
@@ -557,6 +631,7 @@ document.getElementById("myList").appendChild(node);
 <div style="background-color:yellow;"><p id="demo"></p></div>
 <h2></h2>
 <div></div>
+<br>
 
 </body>
 </html>
