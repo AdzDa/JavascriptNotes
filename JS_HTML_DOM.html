@@ -420,6 +420,135 @@ document.getElementById("myList").appendChild(node);
 
 <p>===============</p>
 
+<div>
+
+    <h2>DOM Form</h2>
+    
+        <div>
+            <h3>JavaScript Validation</h3>
+        
+            <div>
+            
+            <p><b>Inside script tag:</b></p>
+            <p>function validateForm() {
+                    <br>let x = document.forms["myForm"]["fname"].value;
+                    <br>if (x == "") {
+                        <br>alert("Name must be filled out");
+                        <br>return false; 
+                                 }
+            }</p>
+    
+            <p><b>Inside form tag:</b></p>
+                    <p>name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post"</p>
+                    <p><i>inside input tag:</i></p>
+                    <p>type="text" name="fname"</p>
+                    <p><i>inside input tag:</i></p>
+                    <p>type="submit" value="Submit"</p>
+    
+            <p>+++++</p>
+            <script>
+            function validateForm() {
+            let x = document.forms["myForm"]["fname"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false; 
+                         }
+                                    }
+            </script>
+    
+                <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+                <br>
+                Name: <input type="text" name="fname">
+                <input type="submit" value="Submit">
+                </form>
+                <br>
+    
+            </div>
+     
+                <div>
+                <p>Please input a number between 1 and 10:</p>
+    
+                <input id="numb" type=number>
+                <button type="button" onclick="myFunction8()">Submit</button>
+    
+                <p id="demo6"></p>
+                <p>+++++</p>
+    
+                <p><b>Inside input tag:</b></p>
+                <p>id="numb" type=number</p>
+                    <p><b>Inside button tag:</b></p>
+                    <p>type="button" onclick="myFunction8()">Submit</p>
+                        <p><b>Inside script tag:</b></p>
+                        <p>
+                            function myFunction8() {
+                                <br>// Get the value of the input field with id="numb"
+                                <br>let x3 = document.getElementById("numb").value;
+                                    <br>// If x is Not a Number or less than one or greater than 10
+                                    <br>let text;
+                                        <br>if (isNaN(x3) || x3 < 1 || x3 > 10) {
+                                            <br>text = "Input not valid";
+                                        <br>} else {
+                                            <br>text = "Input OK";}
+                                        <br>document.getElementById("demo6").innerHTML = text; }
+                        </p>
+    
+                           
+                        <script>
+                        function myFunction8() {
+                        // Get the value of the input field with id="numb"
+                        let x3 = document.getElementById("numb").value;
+                        // If x is Not a Number or less than one or greater than 10
+                        let text;
+                        if (isNaN(x3) || x3 < 1 || x3 > 10) {
+                            text = "Input not valid";
+                        } else {
+                            text = "Input OK";
+                        }
+                        document.getElementById("demo6").innerHTML = text;
+                        }
+                        </script>
+    
+                 </div>
+     
+            <div>
+    
+            <p><b>Inside form tag:</b></p>   
+            <p>action="/action_page.php" method="post"</p>
+                <p><i>inside input tag:</i></p> 
+                <p>type="text" name="fname" required</p>
+                    <p><i>inside input tag:</i></p> 
+                    <p>type="submit" value="Submit"</p>
+    
+            <p>+++++</p>
+            <br>
+            <form action="/action_page.php" method="post">
+                <input type="text" name="fname" required>
+                <input type="submit" value="Submit">
+            </form>
+    
+            <p>If you click submit, without filling out the text field, 
+            your browser will display an error message.</p>
+    
+            </div>
+    
+        </div>
+    
+        
+    
+    
+    
+        
+    
+        <div></div>
+    
+        <div></div>
+</div>
+
+
+
+
+
+
 <h3><i></i></h3>
 <h3></h3>
 <p></p>
