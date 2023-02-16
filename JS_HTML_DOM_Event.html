@@ -12,6 +12,64 @@
                        margin:15px 5px 5px 5px;}   
                div>div>div {border:1px solid black;
 
+       //for animation Event
+       #EgDiv3{
+               position: absolute;
+               border:1px solid black;
+               width: 100%;
+               height: 100px;
+               display: grid;
+               justify-content:center;
+               margin:20px;}
+       
+               #myDIV3 {
+               width: 100%;
+               height: 20px;
+               background: orange;
+               position: relative;
+               padding:10px;
+               }
+
+               @keyframes mymove {
+                       from {top: 0px;}
+                       to {top: 60px;}
+               }
+
+       //for animation Properties
+       #myDIV4 {
+               width: 100%;
+               height: 50px;
+               padding: 16px;
+               background: orange;
+               position: relative;
+               font-size: 20px;
+               text-align: center;
+               animation: mymove4 5s infinite;
+               }
+
+               @keyframes mymove4 {
+               from {top: 0px;}
+               to {top: 200px;}
+               }
+       
+
+       //for Animation elapsed time
+       #myDIV5 {
+               width: 100%;
+               height: 50px;
+               padding: 16px;
+               background: orange;
+               position: relative;
+               font-size: 20px;
+               text-align: center;
+               animation: mymove5 4s infinite;
+               }
+
+                       @keyframes mymove5 {
+                       from {top: 0px;}
+                       to {top: 200px;}
+                       }
+
    </style>
 </head>
 
@@ -28,60 +86,355 @@
 
        <h2>The afterprint Event</h2>
 
-       <body onafterprint="myFunction()">
+       <body onafterprint="myFunction1()">
 
-       <h3>Print this document!</h3>
-       <p><b>Tip</b>: The keyboard shortcut Ctrl+P prints a page.</p>
+       <p><b>Inside opening body tag</b></p>
+       <p> onafterprint="myFunction1()"></p><br>
+
+       <p><b>Inside script tag</b></p>
+       <p>function myFunction1() { alert("This document is now being printed"); }</p>
+       
+       <p><i>#After print action is clicked; myFunction1 will be done(an alert given)</i></p><br>
 
        <script>
-       function myFunction() {
+       function myFunction1() {
        alert("This document is now being printed");
        }
        </script>
+
+       <p><b>Tip</b>: The keyboard shortcut Ctrl+P prints a page.</p>
+
        </div>
 
 <p>+++++</p>
 
        <div>
-       <body onbeforeprint="myFunction()">
+       <body onbeforeprint="myFunction2()">
        <h2>The beforeprint Event</h2>
 
-       <h3>Print this document!</h3>
-       <p><b>Tip</b>: The keyboard shortcut Ctrl+P prints a page.</p>
+       <p><b>Inside opening body tag</b></p>
+       <p> onbeforeprint="myFunction2()"></p><br>
+
+       <p><b>Inside script tag</b></p>
+       <p>function myFunction2() { alert("You are about to print this document!"); }</p>
+       <p><i>#When we type print Ctrl+P; before the printing option/properties opened;
+             myFunction2 will be done(an alert given)</i></p><br>
 
        <script>
-       function myFunction() {
+       function myFunction2() {
        alert("You are about to print this document!");
        }
        </script>    
+
+       <p><b>Tip</b>: The keyboard shortcut Ctrl+P prints a page.</p>
+
        </div>
 
 </div>
+
+<p>===============</p>
+
+       <div >
+
+               <div >
+               <h2>Animation Event</h2>
+
+               <p>can try to check these links for sample if not working here:</p>
+               <a href="https://jsdisplay.w3spaces.com/HTML-DOM-EVENT_ANIMATION.html">Link 1 </a> <br>
+               <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_animationstart">Link 2 </a>      
+                               <div>
+                                       <h3>animationstart</h3>
+                                       <p>The animationstart event occurs when a CSS animation starts.</p>
+                               </div>
+
+               <div>
+                       <h3>animationend</h3>
+                       <p>The animationend event occurs when a CSS animation has completed.</p>
+               </div>
+
+                               <div>
+                                       <h3>animationiteration</h3>
+                                       <p>The animationiteration event occurs when a CSS animation is repeated.</p>
+                               </div>
+
+
+               <div id="EgDiv3">
+               <h4>Example:</h4>
+
+               <div 
+               style="text-align: center;" id="myDIV3" onclick="myFunction3()">Click me to start the animation.
+               </div>
+
+               <div>
+                       <p><b>Inside div tag:</b>  style="text-align: center;" id="myDIV3" 
+                       onclick="myFunction3()">Click me to start the animation.</p>
+
+                       <div> <p><b>Inside script tag:</b> <br>
+                               <div>
+                                       const div3 = document.getElementById("myDIV3");<br>
+                                       function myFunction3() { div3.style.animation = "mymove 1s 2";  }  <br>
+                               </div>
+                                       
+                                       <div>
+                                               div3.addEventListener("animationstart", myStartFunction3);
+                                               div3.addEventListener("animationiteration", myRepeatFunction3);
+                                               div3.addEventListener("animationend", myEndFunction3);
+                                       </div>
+
+                               <div>
+                                       function myStartFunction3() {
+                                       this.innerHTML = "animation started";
+                                       this.style.backgroundColor = "pink";
+                                       }
+                               </div>
+
+                                       <div>
+                                               function myRepeatFunction3() {
+                                               this.innerHTML = "animation replayed";
+                                               this.style.backgroundColor = "lightblue";
+                                               }
+                                       </div>
+
+                               <div>
+                                       function myEndFunction3() {
+                                       this.innerHTML = "animation completed";
+                                       this.style.backgroundColor = "lightgray";
+                                       }
+                               </div>
+                       </div>
+
+               </div>
+
+       <div>
+       <p><b>Inside style tag</b></p>
+
+               <div>
+                       <p><i> #EgDiv3{</i></p>
+                       <p>
+                               position: absolute;<br>
+                               border:1px solid black;<br>
+                               width: 100%;<br>
+                               height: 100px;<br>
+                               display: grid;<br>
+                               justify-content:center;<br>
+                               margin:20px;} </p>
+               </div>
+
+                       <div>
+                               <p><i>#myDIV3 {</i></p>
+                               <p>     width: 100%;<br>
+                                       height: 20px;<br>
+                                       background: orange;<br>
+                                       position: relative;<br>
+                                       padding:10px; }</p>
+                       </div>
+
+               <div>
+                       <p><i>@keyframes mymove {</i></p>
+                       <p>     from {top: 0px;} <br>
+                               to {top: 60px;}}</p>
+               </div>
+       </div>
+
+               </div>
+
+                               <script>
+                               const div3 = document.getElementById("myDIV3");
+
+                                       function myFunction3() {
+                                       div3.style.animation = "mymove 1s 2";
+                                       }
+
+                               div3.addEventListener("animationstart", myStartFunction3);
+                               div3.addEventListener("animationiteration", myRepeatFunction3);
+                               div3.addEventListener("animationend", myEndFunction3);
+
+                                       function myStartFunction3() {
+                                       this.innerHTML = "animation started";
+                                       this.style.backgroundColor = "pink";
+                                       }
+
+                               function myRepeatFunction3() {
+                                       this.innerHTML = "animation replayed";
+                                       this.style.backgroundColor = "lightblue";
+                               }
+
+                                       function myEndFunction3() {
+                                       this.innerHTML = "animation completed";
+                                       this.style.backgroundColor = "lightgray";
+                                       }
+                               </script>
+
+                                       
+               </div>
+
+       </div>
+
+<p>+++++</p>
+
+       <div>
+               <h2>Animation Properties</h2>
+
+               <div>
+                       <h3>animationName</h3>
+                       <ul><p><i>property:</i></p>
+                               <li>returns the name of the animation</li>
+                               <li> is read-only</li>
+                               <li> is the value of the animation-name CSS property.</li>
+                       </ul>
+
+                       <div>
+                               
+                               <p>This example uses the addEventListener() method to attach an "animationstart" event to a DIV element.</p>
+                               <p>The animationName property returns the animation name used in this animation:</p>
+
+                               <div id="myDIV4"></div>
+
+                               <script>
+                               const div4 = document.getElementById("myDIV4");
+                               div4.addEventListener("animationstart", myStartFunction4);
+
+                               function myStartFunction4(event) {
+                               this.innerHTML = "The animation-name is: " + event.animationName;
+                               }
+                               </script>
+
+                       </div>
+
+                       <div>
+                               <p><b>Inside div tag:</b>  id="myDIV4"></p>
+
+                               <div>
+                                       <p><b>Inside script tag:</b></p>  
+                                       <div>
+                                               const div4 = document.getElementById("myDIV4");<br>
+                                               div4.addEventListener("animationstart", myStartFunction4);
+
+                                       </div>
+
+                                       <div>
+                                               function myStartFunction4(event) {
+                                               this.innerHTML = "The animation-name is: " + event.animationName;}                
+                                       </div>
+                               </div>
+                       
+                       </div>
+
+                       <div > <p><b>Inside style tag:</b></p>
+
+                               <div>
+                                       <p><i>#myDIV4 {</i></p>
+                                       <p>     width: 100%;<br>
+                                               height: 50px;<br>
+                                               padding: 16px;<br>
+                                               background: orange;<br>
+                                               position: relative;<br>
+                                               font-size: 20px;<br>
+                                               text-align: center;<br>
+                                               animation: mymove4 5s infinite; }</p>
+                               </div>
+
+                               <div>
+                                       <p><i>@keyframes mymove4 {</i></p>
+                                       <p>      from {top: 0px;}<br>
+                                               to {top: 200px;}}</p>
+                               </div>            
+
+                       </div>
+
+                       <p>can try to check these links for sample if not working here:</p>
+                       <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_event_animation_animationname">Link 1 </a> <br>
+                       <a href="https://jsdisplay.w3spaces.com/HTML_DOM_EVENT_ANIMATION_animationName.html">Link 2 </a>                
+               
+               </div>
+
+               <div>
+                       <h3>elapsedTime</h3>
+                       <ul><p><i>property:</i></p>
+                               <li>returns the number of seconds the animation has been running, when an animation event occurs.</li>
+                               <li>is read-only</li>
+                               <li>always returns "0" for the animationstart event.</li>
+                       <p>value is not affected if the animation is paused.</p>
+
+                       <div>
+                               <p>can try to check these links for sample if not working here:</p>
+                               <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_event_animation_elapsedtime">Link 1 </a> <br>
+                       </div>
+       
+
+                       <p>This example uses the addEventListener() method to attach an "animationstart" and "animationiteration" event to a DIV element.</p>
+                       <p>The elapsedTime property returns the number of seconds the animation has been running:</p>
+
+                       <div id="myDIV5">The animation has started</div>
+
+                       <script>
+                       const div5 = document.getElementById("myDIV5");
+                       div5.addEventListener("animationiteration", myRepeatFunction5);
+
+                       function myRepeatFunction5(event) {
+                       this.style.backgroundColor = "lightblue";
+                       this.innerHTML = "Elapsed time: " + event.elapsedTime + " seconds";
+                       }
+                       </script>
+
+                       <div>
+                       <p><b>Inside div tag: </b> id="myDIV5">The animation has started<</p>    
+
+                               <div>
+                                       <p><b>Inside script tag:</b></p>   
+
+                                               <div>
+                                                       const div5 = document.getElementById("myDIV5");<br>
+                                                       div5.addEventListener("animationiteration", myRepeatFunction5);
+                                               </div>
+
+                                       <div>
+                                               function myRepeatFunction5(event) {<br>
+                                               this.style.backgroundColor = "lightblue";<br>
+                                               this.innerHTML = "Elapsed time: " + event.elapsedTime + " seconds";
+                                               }
+                                       </div>    
+                               </div>   
+                       </div>
+
+                               <div> <p><b>Inside style tag:</b></p>
+
+                                       <div><p><i>#myDIV5 {</i></p>
+                                               <p>     width: 100%;<br>
+                                                       height: 50px;<br>
+                                                       padding: 16px;<br>
+                                                       background: orange;<br>
+                                                       position: relative;<br>
+                                                       font-size: 20px;<br>
+                                                       text-align: center;<br>
+                                                       animation: mymove5 4s infinite; }</p>
+                                       </div>
+
+                                       <div><p><i>@keyframes mymove5 {</i></p>
+                                               <p>     from {top: 0px;}<br>
+                                                       to {top: 200px;} }</p>
+                                       </div>
+                               </div>
+               </div>
+
+               <div>
+                       <h3>pseudoElement</h3>
+                       <p>The name of the pseudo-element of the animation</p>
+               </div>
+
+       </div>
+
+<p>===============</p>
+<div>
+<h2>onabort Event</h2>  
+
+</div>
+
 <p>===============</p>
 
 <div></div>
 
 <p>===============</p>
-
-<div></div>
-
-<p>===============</p>
-
-<div></div>
-
-<p>===============</p>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <p>+++++</p>
@@ -89,6 +442,11 @@
 <p><i></i></p>
 
 <b></b>
+
+
+<ul>
+<li></li>
+</ul>
 
 <h3><i></i></h3>
 <h2></h2>
