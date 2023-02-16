@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<style> 
+
+	#EgDiv3{
+    		position: absolute;
+            border:1px solid black;
+            width: 100%;
+          	height: 100px;
+            display: grid;
+            justify-content:center;
+            margin:20px;}
+    
+        #myDIV3 {
+          width: 100%;
+          height: 20px;
+          background: orange;
+          position: relative;
+          padding:10px;
+        }
+
+              @keyframes mymove {
+                from {top: 0px;}
+                to {top: 60px;}
+              }
+</style>
+
+<body>
+
+<div id="EgDiv3">
+
+    <div 
+    style="text-align: center;" id="myDIV3" onclick="myFunction3()">Click me to start the animation.
+    </div>
+
+</div>
+              <script>
+              const div3 = document.getElementById("myDIV3");
+
+                  function myFunction3() {
+                    div3.style.animation = "mymove 1s 2";
+                  }
+
+              div3.addEventListener("animationstart", myStartFunction3);
+              div3.addEventListener("animationiteration", myRepeatFunction3);
+              div3.addEventListener("animationend", myEndFunction3);
+
+                  function myStartFunction3() {
+                    this.innerHTML = "animation started";
+                    this.style.backgroundColor = "pink";
+                  }
+
+              function myRepeatFunction3() {
+                this.innerHTML = "animation replayed";
+                this.style.backgroundColor = "lightblue";
+              }
+
+                  function myEndFunction3() {
+                    this.innerHTML = "animation completed";
+                    this.style.backgroundColor = "lightgray";
+                  }
+              </script>
+
+
+
+
+
+</body>
+</html>
